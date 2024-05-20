@@ -30,7 +30,8 @@ url: https://nlACh.github.io/ # the base hostname & protocol for your site, e.g.
 github_username:  nlACh
 
 # Build settings
-theme: academic-jekyll-theme
+# theme: academic-jekyll-theme
+remote_theme: academic-jekyll-theme
 plugins:
   - jekyll-feed
 
