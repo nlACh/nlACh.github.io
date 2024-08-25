@@ -1,5 +1,5 @@
 ---
-layout: "layouts/list"
+layout: "layouts/page"
 eleventyNavigation:
   key: links
   title: Links
@@ -8,3 +8,4 @@ eleventyNavigation:
 permalink: "/links.html"
 title: "Links"
 ---
+
