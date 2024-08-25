@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://example.com/">
   <title>Nilayan Paul</title>
   <id>https://example.com/</id>
-  <updated>2024-08-25T12:48:00Z</updated>
+  <updated>2024-08-25T13:51:56Z</updated>
   <link rel="self" href="https://example.com/feed.xml" type="application/atom+xml"/>
   <link rel="alternate" type="text/html" href="https://example.com/"/>
   <author>
@@ -20,8 +20,8 @@
       
       <id>https://example.com/pubs/1-pubs/</id>
       <link rel="alternate" type="text/html" href="https://example.com/pubs/1-pubs/"/>
-      <published>2024-08-25T12:48:00Z</published>
-      <updated>2024-08-25T12:48:00Z </updated>
+      <published>2024-08-25T13:51:56Z</published>
+      <updated>2024-08-25T13:51:56Z </updated>
       
         
           <category>mypubs</category>
@@ -37,14 +37,25 @@
       
       <id>https://example.com/pubs/2-confs/</id>
       <link rel="alternate" type="text/html" href="https://example.com/pubs/2-confs/"/>
-      <published>2024-08-25T12:48:00Z</published>
-      <updated>2024-08-25T12:48:00Z </updated>
+      <published>2024-08-25T13:51:56Z</published>
+      <updated>2024-08-25T13:51:56Z </updated>
       
         
           <category>mypubs</category>
         
       
-      <content xml:lang="en" type="html">&lt;h2&gt;Conferences that I have attended&lt;/h2&gt;
+      <content xml:lang="en" type="html">&lt;p&gt;&lt;strong&gt;Conferences that I have attended&lt;/strong&gt; &lt;em&gt;(newest first)&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Study of the effective mass dependent charge qubit performance in double quantum dot channel nanowire FETs&amp;quot;&lt;/em&gt;&lt;/strong&gt;, 2nd International Conference on Low Energy Devices (ICLED), 1st - 4th August, 2024.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, B. Nag Chowdhury, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Understanding the composition dependent charge qubit performance of dual-gate AlxGa1-xAs NWFETs&amp;quot;&lt;/em&gt;&lt;/strong&gt;, 22nd International Workshop on the Physics of Semiconductor Devices (IWPSD), 13th - 17th December, 2023.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, B. Nag Chowdhury, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Investigation of the impact of Ge-quantum well width on the performance of Pt/Si/SiO2/Ge/SiO2/Pt resonant tunneling device using NEGF formalism&amp;quot;&lt;/em&gt;&lt;/strong&gt;, 5th International Symposium on Devices, Circuits and Systems (ISDCS), May, 2022.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     </entry>
   
@@ -54,14 +65,22 @@
       
       <id>https://example.com/pubs/3-preprints/</id>
       <link rel="alternate" type="text/html" href="https://example.com/pubs/3-preprints/"/>
-      <published>2024-08-25T12:48:00Z</published>
-      <updated>2024-08-25T12:48:00Z </updated>
+      <published>2024-08-25T13:51:56Z</published>
+      <updated>2024-08-25T13:51:56Z </updated>
       
         
           <category>mypubs</category>
         
       
-      <content xml:lang="en" type="html">&lt;h2&gt;Preprints of my papers that are undergoing peer review&lt;/h2&gt;
+      <content xml:lang="en" type="html">&lt;p&gt;&lt;strong&gt;Preprints of my papers that are undergoing peer review&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Analytical modeling of double quantum dot channel nanowire FETs for multi-threshold current levels&amp;quot;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, B. Nag Chowdhury, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Study of the impact of diameter and quantum dot separation on the charge qubit performance of dual-gate GaAs nanowire FET&amp;quot;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     </entry>
   
