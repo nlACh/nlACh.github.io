@@ -17,7 +17,7 @@
 	"scripts": {
 		"clean": "rm -rf dist",
 		"build:files": "npx @11ty/eleventy",
-		"build": "run-p build:*",
+		"build": "eleventy",
 		"serve:files": "npx @11ty/eleventy --quiet --incremental --serve",
 		"serve": "run-p serve:*"
 	},
