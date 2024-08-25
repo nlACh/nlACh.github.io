@@ -1,0 +1,10 @@
+{
+	"layout": "layouts/page",
+	"permalink": "/pubs/{{ page.fileSlug }}/index.html",
+	"eleventyNavigation": {
+		"parent": "pubs"
+	},
+	"og": {
+		"type": "info"
+	}
+}

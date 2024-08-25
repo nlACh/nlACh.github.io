@@ -18,7 +18,7 @@
 		"clean": "rm -rf dist",
 		"build:files": "npx @11ty/eleventy",
 		"build": "eleventy",
-		"serve:files": "npx @11ty/eleventy --quiet --incremental --serve",
+		"serve:files": "npx @11ty/eleventy --incremental --serve",
 		"serve": "run-p serve:*"
 	},
 	"dependencies": {

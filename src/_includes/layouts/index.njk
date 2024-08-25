@@ -12,11 +12,13 @@
     <div class="layout-span layout-span--aside">
       <aside class="content-aside flow">
         <h2>Quick Links</h2>
-        <p>Still figuring how to put stuff out here...</p>
+        <p><h4>My research</h4></p>
         <ul>
-          {% for item in collections.curated %}
+  
+          {% for item in collections.feed %}
             {% include "partials/site-post-list.njk" %}
           {% endfor %}
+          
         </ul>
       </aside>
     </div>
