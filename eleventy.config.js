@@ -25,6 +25,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addCollection("posts", collections.posts);
 	eleventyConfig.addCollection("feed", collections.feed);
 	eleventyConfig.addCollection("curated", collections.curated);
+	eleventyConfig.addCollection("pub_id", collections.pub_id);
 
 	// Filters
 	eleventyConfig.addFilter("dateToDMY", filters.dateToDMY);

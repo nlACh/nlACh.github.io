@@ -1,4 +1,5 @@
 ---
+layout: "layouts/page"
 title: "Preprints"
 tags:
   - "mypubs"
