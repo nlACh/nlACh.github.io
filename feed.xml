@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://example.com/">
   <title>Nilayan Paul</title>
   <id>https://example.com/</id>
-  <updated>2024-08-25T13:51:56Z</updated>
+  <updated>2024-08-25T18:35:59Z</updated>
   <link rel="self" href="https://example.com/feed.xml" type="application/atom+xml"/>
   <link rel="alternate" type="text/html" href="https://example.com/"/>
   <author>
@@ -16,19 +16,18 @@
   
   
     <entry>
-      <title>Journals</title>
+      <title>Journal Publications</title>
       
       <id>https://example.com/pubs/1-pubs/</id>
       <link rel="alternate" type="text/html" href="https://example.com/pubs/1-pubs/"/>
-      <published>2024-08-25T13:51:56Z</published>
-      <updated>2024-08-25T13:51:56Z </updated>
+      <published>2024-08-25T18:35:59Z</published>
+      <updated>2024-08-25T18:35:59Z </updated>
       
         
           <category>mypubs</category>
         
       
-      <content xml:lang="en" type="html">&lt;h2&gt;Journal Publications&lt;/h2&gt;
-</content>
+      <content xml:lang="en" type="html"></content>
     </entry>
   
   
@@ -37,25 +36,31 @@
       
       <id>https://example.com/pubs/2-confs/</id>
       <link rel="alternate" type="text/html" href="https://example.com/pubs/2-confs/"/>
-      <published>2024-08-25T13:51:56Z</published>
-      <updated>2024-08-25T13:51:56Z </updated>
+      <published>2024-08-25T18:35:59Z</published>
+      <updated>2024-08-25T18:35:59Z </updated>
       
         
           <category>mypubs</category>
         
       
-      <content xml:lang="en" type="html">&lt;p&gt;&lt;strong&gt;Conferences that I have attended&lt;/strong&gt; &lt;em&gt;(newest first)&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Study of the effective mass dependent charge qubit performance in double quantum dot channel nanowire FETs&amp;quot;&lt;/em&gt;&lt;/strong&gt;, 2nd International Conference on Low Energy Devices (ICLED), 1st - 4th August, 2024.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, B. Nag Chowdhury, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Understanding the composition dependent charge qubit performance of dual-gate AlxGa1-xAs NWFETs&amp;quot;&lt;/em&gt;&lt;/strong&gt;, 22nd International Workshop on the Physics of Semiconductor Devices (IWPSD), 13th - 17th December, 2023.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, B. Nag Chowdhury, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Investigation of the impact of Ge-quantum well width on the performance of Pt/Si/SiO2/Ge/SiO2/Pt resonant tunneling device using NEGF formalism&amp;quot;&lt;/em&gt;&lt;/strong&gt;, 5th International Symposium on Devices, Circuits and Systems (ISDCS), May, 2022.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
+      <content xml:lang="en" type="html">&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;section class=&quot;wrapper layout-grid&quot;&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h6 class=&quot;page-header layout-span | content-main flow&quot;&gt;Study of the effective mass dependent charge qubit performance in double quantum dot channel nanowire FETs&lt;/h6&gt;
+&lt;div class=&quot;layout-span layout-span--main | content-main flow&quot;&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/section&gt;&lt;p&gt;&lt;/p&gt;
+    &lt;br /&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;section class=&quot;wrapper layout-grid&quot;&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h6 class=&quot;page-header layout-span | content-main flow&quot;&gt;Understanding the composition dependent charge qubit performance of a dual-gate AlxGa1-xAs nanowire FET&lt;/h6&gt;
+&lt;div class=&quot;layout-span layout-span--main | content-main flow&quot;&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/section&gt;&lt;p&gt;&lt;/p&gt;
+    &lt;br /&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;section class=&quot;wrapper layout-grid&quot;&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h6 class=&quot;page-header layout-span | content-main flow&quot;&gt;Investigation of the impact of Ge-quantum well width on the performance of a Pt/p-Si/SiO2/Ge/SiO2/Pt resonant tunneling device using NEGF formalism&lt;/h6&gt;
+&lt;div class=&quot;layout-span layout-span--main | content-main flow&quot;&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;
+&lt;/section&gt;&lt;p&gt;&lt;/p&gt;
+    &lt;br /&gt;
 </content>
     </entry>
   
@@ -65,8 +70,8 @@
       
       <id>https://example.com/pubs/3-preprints/</id>
       <link rel="alternate" type="text/html" href="https://example.com/pubs/3-preprints/"/>
-      <published>2024-08-25T13:51:56Z</published>
-      <updated>2024-08-25T13:51:56Z </updated>
+      <published>2024-08-25T18:35:59Z</published>
+      <updated>2024-08-25T18:35:59Z </updated>
       
         
           <category>mypubs</category>
