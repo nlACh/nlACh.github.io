@@ -1,0 +1,22 @@
+{
+	"name": "",
+	"short_name": "nlplSite",
+	"theme_color": "#FFFFFF",
+	"background_color": "#FFFFFF",
+	"start_url": "/",
+	"display": "minimal-UI",
+	"icons": [
+		{
+			"src": "/icon-192.jpg",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/icon-512.jpg",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	]
+}

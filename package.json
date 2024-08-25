@@ -1,0 +1,44 @@
+{
+	"name": "11ty-get-going",
+	"version": "2.0.0",
+	"description": "Just another 11ty starter kit.",
+	"keywords": [
+		"eleventy",
+		"eleventy template",
+		"starter"
+	],
+	"author": {
+		"name": "Kevin Healy-Clarke"
+	},
+	"engines": {
+		"node": "^20.0.0"
+	},
+	"type": "module",
+	"scripts": {
+		"clean": "rm -rf dist",
+		"build:files": "npx @11ty/eleventy",
+		"build": "run-p build:*",
+		"serve:files": "npx @11ty/eleventy --quiet --incremental --serve",
+		"serve": "run-p serve:*"
+	},
+	"dependencies": {
+		"@11ty/eleventy": "3.0.0-alpha.6",
+		"@11ty/eleventy-img": "^3.1.0",
+		"@11ty/eleventy-navigation": "^0.3.5",
+		"@11ty/eleventy-plugin-rss": "^1.2.0",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@11tyrocks/eleventy-plugin-lightningcss": "^1.4.0",
+		"html-minifier": "^4.0.0",
+		"markdown-it": "^13.0.1",
+		"markdown-it-attrs": "^4.1.6",
+		"markdown-it-deflist": "^2.1.0",
+		"markdown-it-eleventy-img": "^0.10.2",
+		"markdown-it-footnote": "^3.0.3",
+		"markdown-it-sub": "^1.0.0",
+		"markdown-it-sup": "^1.0.0",
+		"npm-run-all": "^4.1.5"
+	},
+	"devDependencies": {
+		"prettier": "^2.8.0"
+	}
+}

@@ -1,0 +1,26 @@
+---
+eleventyExcludeFromCollections: true
+permalink: /manifest.webmanifest
+---
+{
+	"name": "{{config.title}}",
+	"short_name": "{{config.shortName}}",
+	"theme_color": "{{config.themeColor}}",
+	"background_color": "{{config.backgroundColor}}",
+	"start_url": "/",
+	"display": "minimal-UI",
+	"icons": [
+		{
+			"src": "/icon-192.jpg",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/icon-512.jpg",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	]
+}
