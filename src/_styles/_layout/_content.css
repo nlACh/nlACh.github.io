@@ -31,3 +31,10 @@
 	border-radius: var(--border-radius-small);
 	background-color: var(--color-surface-secondary);
 }
+
+.content-highlight {
+	margin-block-start: var(--space-l);
+	padding: var(--space-l);
+	border-radius: var(--border-radius-small);
+	background-color: var(--color-surface-secondary);
+}
