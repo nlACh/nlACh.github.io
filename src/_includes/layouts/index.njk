@@ -1,10 +1,12 @@
 {% extends "layouts/base.njk" %} 
 
 {% set title = config.projectName %}
+{% set profile_img = "media/chobi.png" %}
 
 {% block content %}
   <section class="wrapper layout-grid">
-    <h1 class="page-header layout-span">{{ title }}</h1>
+    <img src="{{ profile_img }}" width="200">
+    
     <div class="layout-span layout-span--main | content-main flow">
       {{ content | safe }}
     </div>

@@ -9,8 +9,10 @@
 <p>{{ item.data.event }}</p>
 {% endif %}
 </div>
-<div class="layout-aside | content-main flow">
-  <img src = "{{ img_path }}" alt="image goes here" width="300" height="200">
+<div class="content-main flow">
+  {% if item.data.image %}
+  <img src = "{{ item.data.image }}" alt="image goes here" width="600">
+  {% endif %}
 </div>
 <div class="layout-span | content-main flow">
   <p><b>Abstract</b></p>

@@ -41,6 +41,10 @@ export default function (eleventyConfig) {
 	// Passthrough copies
 	eleventyConfig.addPassthroughCopy({ "src/static/fonts": "/fonts" });
 	eleventyConfig.addPassthroughCopy({ "src/static/favicons/*": "/" });
+	eleventyConfig.addPassthroughCopy({ "src/media_global/*":"/media"});
+	eleventyConfig.addPassthroughCopy({ "src/media_conf/*":"/content/pub_type/2-confs"});
+	eleventyConfig.addPassthroughCopy({ "src/media_preprint/*":"/content/pub_type/3-preprints"});
+	eleventyConfig.addPassthroughCopy({ "src/media_pub/*":"/content/pub_type/1-pubs"});
 
 	// Watch targets
 	eleventyConfig.addWatchTarget("./src/_styles/**/*.css");

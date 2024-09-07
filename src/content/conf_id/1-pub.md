@@ -5,5 +5,6 @@ authors: "N. Paul, B. Nag Chowdhury, S. Chattopadhyay"
 event: "5th International Symposium on Devices, Circuits and Systems, 2022"
 tags:
   - "conf_item"
+image: "I_vs_V_vs_qw.png"
 ---
 Resonance
