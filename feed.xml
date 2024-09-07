@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://example.com/">
   <title>Nilayan Paul</title>
   <id>https://example.com/</id>
-  <updated>2024-09-01T06:17:17Z</updated>
+  <updated>2024-09-07T16:13:43Z</updated>
   <link rel="self" href="https://example.com/feed.xml" type="application/atom+xml"/>
   <link rel="alternate" type="text/html" href="https://example.com/"/>
   <author>
@@ -18,10 +18,10 @@
     <entry>
       <title>Journal Publications</title>
       
-      <id>https://example.com/pubs/1-pubs/</id>
-      <link rel="alternate" type="text/html" href="https://example.com/pubs/1-pubs/"/>
-      <published>2024-09-01T06:17:17Z</published>
-      <updated>2024-09-01T06:17:17Z </updated>
+      <id>https://example.com/content/pub_type/1-pubs/</id>
+      <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/1-pubs/"/>
+      <published>2024-09-07T16:13:43Z</published>
+      <updated>2024-09-07T16:13:43Z </updated>
       
         
           <category>mypubs</category>
@@ -34,10 +34,10 @@
     <entry>
       <title>Conferences</title>
       
-      <id>https://example.com/pubs/2-confs/</id>
-      <link rel="alternate" type="text/html" href="https://example.com/pubs/2-confs/"/>
-      <published>2024-09-01T06:17:17Z</published>
-      <updated>2024-09-01T06:17:17Z </updated>
+      <id>https://example.com/content/pub_type/2-confs/</id>
+      <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/2-confs/"/>
+      <published>2024-09-07T16:13:43Z</published>
+      <updated>2024-09-07T16:13:43Z </updated>
       
         
           <category>mypubs</category>
@@ -50,25 +50,16 @@
     <entry>
       <title>Preprints</title>
       
-      <id>https://example.com/pubs/3-preprints/</id>
-      <link rel="alternate" type="text/html" href="https://example.com/pubs/3-preprints/"/>
-      <published>2024-09-01T06:17:17Z</published>
-      <updated>2024-09-01T06:17:17Z </updated>
+      <id>https://example.com/content/pub_type/3-preprints/</id>
+      <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/3-preprints/"/>
+      <published>2024-09-07T16:13:43Z</published>
+      <updated>2024-09-07T16:13:43Z </updated>
       
         
           <category>mypubs</category>
         
       
-      <content xml:lang="en" type="html">&lt;p&gt;&lt;strong&gt;Preprints of my papers that are undergoing peer review&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Analytical modeling of double quantum dot channel nanowire FETs for multi-threshold current levels&amp;quot;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;N. Paul&lt;/em&gt;&lt;/strong&gt;, B. Nag Chowdhury, S. Chattopadhyay, &lt;strong&gt;&lt;em&gt;&amp;quot;Study of the impact of diameter and quantum dot separation on the charge qubit performance of dual-gate GaAs nanowire FET&amp;quot;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
+      <content xml:lang="en" type="html"></content>
     </entry>
   
 </feed>
