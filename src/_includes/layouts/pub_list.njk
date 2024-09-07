@@ -1,0 +1,13 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <section class="wrapper layout-list">
+    <h1 class="page-header layout-span">{{ title }}</h1>
+    <div class="layout-span | content-main flow">
+      <ul>
+        {% for item in collections.conf_id %}
+            <p>{% include "partials/pub_id.njk" %}</p>
+        {% endfor %}
+      </ul>
+  </section>
+{% endblock %}

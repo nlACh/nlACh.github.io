@@ -24,8 +24,9 @@ export default function (eleventyConfig) {
 	// Collections
 	eleventyConfig.addCollection("posts", collections.posts);
 	eleventyConfig.addCollection("feed", collections.feed);
-	eleventyConfig.addCollection("curated", collections.curated);
-	eleventyConfig.addCollection("pub_id", collections.pub_id);
+	eleventyConfig.addCollection("conf_id", collections.conf_id);
+	eleventyConfig.addCollection("preprint_id", collections.preprint_id);
+	eleventyConfig.addCollection("publication_id", collections.publication_id);
 
 	// Filters
 	eleventyConfig.addFilter("dateToDMY", filters.dateToDMY);
