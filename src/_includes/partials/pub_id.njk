@@ -10,14 +10,15 @@
 {% endif %}
 </div>
 <div class="layout-aside | content-main flow">
-  <img src = "{{ img_path }}" alt="image goes here" width="300" height="200">
+  <img src = "{{ img_path }}" alt="image goes here" width="400">
 </div>
-<div class="layout-span | content-main flow">
-  <p><b>Abstract</b></p>
-  Abstract goes here
-</div>
-<!-- <div class="content-main flow">
-  {{ content | safe }}
-</div>
--->
+
+{% if item.data.abstract %}
+  <div class="layout-span">
+      <button class="collapsible">Abstract</button>
+      <div class="content">
+      <p>{{ item.data.abstract }}</p>
+      </div>
+  </div>
+{% endif %}
 </article>

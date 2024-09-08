@@ -3,35 +3,37 @@
 <h6 class="page-header layout-span | content-main flow">{{ item.data.title }}</h6>
 <div class="layout-list">
 
-{% if item.data.authors %}
-<p>{{ item.data.authors }}</p>
-{% endif %}
+  {% if item.data.authors %}
+  <p>{{ item.data.authors }}</p>
+  {% endif %}
 
-{% if item.data.pub_year %}
-<p>{{ item.data.pub_year }}</p>
-{% endif %}
+  {% if item.data.pub_year %}
+  <p>{{ item.data.pub_year }}</p>
+  {% endif %}
 
-{% if item.data.preprint_addr %}
-<p>Available <a href="{{ item.data.preprint_addr }}">here</a></p>
-{% endif %}
+  {% if item.data.preprint_addr %}
+  <p>Available <a href="{{ item.data.preprint_addr }}">here</a></p>
+  {% endif %}
 
-{% if item.data.alt_available %}
-<p>Alternate version available <a href="{{ item.data.alt_addr }}">here</a></p>
-{% endif %}
+  {% if item.data.alt_available %}
+    <p>Alternate version available <a href="{{ item.data.alt_addr }}">here</a></p>
+  {% endif %}
 
   <div class="content-main flow">
     {% if item.data.image %}
-    <img src = "./{{ item.data.image }}" alt="image goes here" width="200">
+    <img src = "./{{ item.data.image }}" alt="image goes here" width="400">
     {% endif %}
     <br/>
   </div>
 </div>
 
-<div class="layout-span">
-  {% if item.data.abstract %}
-    <p><b>Abstract</b></p>
-    <p>{{ item.data.abstract }}</p>
-  {% endif %}
-</div>
+{% if item.data.abstract %}
+  <div class="layout-span">
+      <button class="collapsible">Abstract</button>
+      <div class="content">
+      <p>{{ item.data.abstract }}</p>
+      </div>
+  </div>
+{% endif %}
 
 </article>
