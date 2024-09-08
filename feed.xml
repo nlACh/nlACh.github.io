@@ -1,27 +1,27 @@
 
 <?xml version="1.0" encoding="utf-8"?>
 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="http://localhost:8080/">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://example.com/">
   <title>Nilayan Paul</title>
-  <id>http://localhost:8080/</id>
-  <updated>2024-09-08T05:44:59Z</updated>
-  <link rel="self" href="http://localhost:8080/feed.xml" type="application/atom+xml"/>
-  <link rel="alternate" type="text/html" href="http://localhost:8080/"/>
+  <id>https://example.com/</id>
+  <updated>2024-09-08T06:26:41Z</updated>
+  <link rel="self" href="https://example.com/feed.xml" type="application/atom+xml"/>
+  <link rel="alternate" type="text/html" href="https://example.com/"/>
   <author>
     <name>N Paul</name>
     <email>nlpl931@gmail.com</email>
   </author>
-  <icon>http://localhost:8080/icon-512.jpg</icon>
+  <icon>https://example.com/icon-512.jpg</icon>
 
   
   
     <entry>
       <title>Journal Publications</title>
       
-      <id>http://localhost:8080/content/pub_type/1-pubs/</id>
-      <link rel="alternate" type="text/html" href="http://localhost:8080/content/pub_type/1-pubs/"/>
-      <published>2024-09-08T05:44:59Z</published>
-      <updated>2024-09-08T05:44:59Z </updated>
+      <id>https://example.com/content/pub_type/1-pubs/</id>
+      <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/1-pubs/"/>
+      <published>2024-09-08T06:26:41Z</published>
+      <updated>2024-09-08T06:26:41Z </updated>
       
         
           <category>mypubs</category>
@@ -34,10 +34,10 @@
     <entry>
       <title>Conferences</title>
       
-      <id>http://localhost:8080/content/pub_type/2-confs/</id>
-      <link rel="alternate" type="text/html" href="http://localhost:8080/content/pub_type/2-confs/"/>
-      <published>2024-09-08T05:44:59Z</published>
-      <updated>2024-09-08T05:44:59Z </updated>
+      <id>https://example.com/content/pub_type/2-confs/</id>
+      <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/2-confs/"/>
+      <published>2024-09-08T06:26:41Z</published>
+      <updated>2024-09-08T06:26:41Z </updated>
       
         
           <category>mypubs</category>
@@ -50,10 +50,10 @@
     <entry>
       <title>Preprints</title>
       
-      <id>http://localhost:8080/content/pub_type/3-preprints/</id>
-      <link rel="alternate" type="text/html" href="http://localhost:8080/content/pub_type/3-preprints/"/>
-      <published>2024-09-08T05:44:59Z</published>
-      <updated>2024-09-08T05:44:59Z </updated>
+      <id>https://example.com/content/pub_type/3-preprints/</id>
+      <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/3-preprints/"/>
+      <published>2024-09-08T06:26:41Z</published>
+      <updated>2024-09-08T06:26:41Z </updated>
       
         
           <category>mypubs</category>
