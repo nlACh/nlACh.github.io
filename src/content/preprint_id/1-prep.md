@@ -1,13 +1,14 @@
 ---
 layout: "partials/preprint_id"
 title: "Design aspects of dual gate GaAs nanowire FET for room temperature charge qubit operation: A study on diameter and gate engineering"
-image: "./src/media/Untitled.jpg"
+image: "qubit_geometrical_paper.png"
 authors: "N. Paul, B. Nag Chowdhury, S. Chattopadhyay"
 pub_year: "2023"
 preprint_addr: "https://doi.org/10.48550/arXiv.2304.10554"
 alt_available: "Yes"
 alt_addr: "https://www.researchgate.net/publication/370213130_Design_Aspects_of_Dual_Gate_GaAs_Nanowire_FET_for_Room_Temperature_Charge_Qubit_Operation_A_Study_on_Diameter_and_Gate_Engineering"
-abstract: "Abstract goes here"
+
+abstract: "The current work explores a geometrically engineered dual-gate GaAs nanowire FET with stateof-the-art miniaturized dimensions (of nanowire diameter and gate seperation) for high performance charge qubit operation at room temperature. Relevant gate voltages in such device can create two voltage-tunable quantum dots (VTQDs) underneath the gates, as well as can manipulate their eigenstate detuning and the inter-dot coupling to generate superposition, whereas a small drain bias may cause its collapse leading to qubit read-out. Such qubit operations, i.e., ‘Initialization’, ‘Manipulation’, and ‘Measurement’, are theoretically modeled in the present work by developing a second quantization filed operator based Schrodinger-Poisson self-consistent framework coupled to non-equilibrium Green’s function (NEGF) formalism. The study shows that the Bloch sphere coverage can be discretized along polar and azimuthal directions by reducing the nanowire diameter and increasing the inter-dot separation respectively, that can be utilized for selective information encoding. The theoretically obtained stability diagrams suggest that downscaled nanowire diameter and increased gate separation sharpen the ‘bonding’ and ‘anti-bonding’ states with reduced anticrossing leading to a gradual transformation of the ‘hyperbolic’ current mapping into a pair of ‘straight lines’. However, the dephasing time in the proposed GaAs VTQD-based qubit may be significantly improved (~10 ns to ~100 ns) by scaling down both the nanowire diameter and gate separation to ~5-3 nm. Therefore, the present study suggests an optimization window for geometrical engineering of a dual-gate nanowire FET qubit to achieve a selective coverage of Bloch sphere for particular information encoding, stability diagram of desired resolution with minimum anticrossing, and an extensively improved dephasing time. Most importantly, such device is compatible with the mainstream CMOS technology and can be utilized for large scale implementation by little modification of the state-of-the-art fabrication processes."
 tags:
-  - "conf_item"
+  - "preprint_item"
 ---

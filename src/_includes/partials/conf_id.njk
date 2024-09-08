@@ -10,20 +10,20 @@
   <p>{{ item.data.event }}</p>
   {% endif %}
 
-  <div class="layout-aside">
+  <div class="content-main flow">
     {% if item.data.image %}
     <img src = "./{{ item.data.image }}" alt="image goes here" width="200">
     {% endif %}
+    <br/>
   </div>
+
 </div>
-<div class="layout-span | content-main flow">
+
+<div class="layout-span">
   {% if item.data.abstract %}
     <p><b>Abstract</b></p>
-    Abstract goes here
+    <p>{{ item.data.abstract }}</p>
   {% endif %}
 </div>
-<!-- <div class="content-main flow">
-  {{ content | safe }}
-</div>
--->
+
 </article>

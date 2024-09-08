@@ -1,5 +1,5 @@
 <article class="wrapper layout-grid content-highlight">
-{% set img_path = item.data.image %}
+
 <h6 class="page-header layout-span | content-main flow">{{ item.data.title }}</h6>
 <div class="layout-list">
 
@@ -19,16 +19,19 @@
 <p>Alternate version available <a href="{{ item.data.alt_addr }}">here</a></p>
 {% endif %}
 
+  <div class="content-main flow">
+    {% if item.data.image %}
+    <img src = "./{{ item.data.image }}" alt="image goes here" width="200">
+    {% endif %}
+    <br/>
+  </div>
 </div>
-<div class="layout-aside | content-main flow">
-  <img src = "{{ img_path }}" alt="image goes here" width="100">
+
+<div class="layout-span">
+  {% if item.data.abstract %}
+    <p><b>Abstract</b></p>
+    <p>{{ item.data.abstract }}</p>
+  {% endif %}
 </div>
-<div class="layout-span | content-main flow">
-  <p><b>Abstract</b></p>
-  Abstract goes here
-</div>
-<!-- <div class="content-main flow">
-  {{ content | safe }}
-</div>
--->
+
 </article>
