@@ -19,6 +19,36 @@
 
 </div>
 
+<div class="layout-aside">
+{% if item.data.proceedings %}
+  <div>
+    <a href="{{ item. data.proceedings }}" target="_blank">Proceedings</a>
+  </div>
+  <br>
+{% endif %}
+
+{% if item.data.abstract_file %}
+  <div>
+    <a href="./{{ item.data.abstract_file }}" download="abstract.pdf">Abstract</a>
+  </div>
+  <br>
+{% endif %}
+
+{% if item.data.poster_file %}
+  <div>
+    <a href="./{{ item.data.poster_file }}" download="poster.pdf">Poster</a>
+  </div>
+  <br>
+{% endif %}
+
+{% if item.data.presentation_file %}
+  <div>
+    <a href="./{{ item.data.presentation_file }}" download="Presentation.pdf">Presentation</a>
+  </div>
+  <br>
+{% endif %}
+</div>
+
 {% if item.data.abstract %}
   <div class="layout-span">
       <button class="collapsible">Abstract</button>
@@ -27,5 +57,4 @@
       </div>
   </div>
 {% endif %}
-
 </article>
