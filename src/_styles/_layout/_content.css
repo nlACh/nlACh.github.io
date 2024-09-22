@@ -26,10 +26,13 @@
 
 .content-aside {
 	--flow-space: var(--space-xs-s);
+	font-family: var(--font-family-sans);
+	font-weight: 800;
+	font-size: 20px;
 	margin-block-start: var(--space-l);
 	padding: var(--space-l);
 	border-radius: var(--border-radius-small);
-	background-color: var(--color-surface-secondary);
+	background-color: var(--color-surface-primary);
 }
 
 .content-highlight {
