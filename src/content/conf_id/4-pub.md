@@ -5,7 +5,7 @@ authors: "N. Paul, S. Chattopadhyay"
 event: "1st International Conference on Sustainable Technologies (ICST), 12th - 14th December, 2024"
 tags:
   - "conf_item"
-image: 
+image: "icst2024_toc.png"
 abstract_file: 
 presentation_file: "ICST2024_NPaul_ppt_final.pdf"
 ---
