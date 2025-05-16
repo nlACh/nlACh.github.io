@@ -7,16 +7,16 @@
   <p>{{ item.data.authors }}</p>
   {% endif %}
 
+  {% if item.data.jorunal %}
+  <p>{{ item.data.jorunal }}</p>
+  {% endif %}
+
   {% if item.data.pub_year %}
   <p>{{ item.data.pub_year }}</p>
   {% endif %}
 
-  {% if item.data.preprint_addr %}
+  {% if item.data.doi %}
   <p>Available <a href="{{ item.data.preprint_addr }}" target="_blank">here</a></p>
-  {% endif %}
-
-  {% if item.data.alt_available %}
-    <p>Alternate version available <a href="{{ item.data.alt_addr }}">here</a></p>
   {% endif %}
 
   <div class="content-main flow">
