@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://example.com/">
   <title>Nilayan Paul</title>
   <id>https://example.com/</id>
-  <updated>2025-06-14T19:06:46Z</updated>
+  <updated>2025-06-14T19:16:47Z</updated>
   <link rel="self" href="https://example.com/feed.xml" type="application/atom+xml"/>
   <link rel="alternate" type="text/html" href="https://example.com/"/>
   <author>
@@ -20,8 +20,8 @@
       
       <id>https://example.com/content/pub_type/1-pubs/</id>
       <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/1-pubs/"/>
-      <published>2025-06-14T19:06:46Z</published>
-      <updated>2025-06-14T19:06:46Z </updated>
+      <published>2025-06-14T19:16:47Z</published>
+      <updated>2025-06-14T19:16:47Z </updated>
       
         
           <category>mypubs</category>
@@ -36,8 +36,8 @@
       
       <id>https://example.com/content/pub_type/2-confs/</id>
       <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/2-confs/"/>
-      <published>2025-06-14T19:06:46Z</published>
-      <updated>2025-06-14T19:06:46Z </updated>
+      <published>2025-06-14T19:16:47Z</published>
+      <updated>2025-06-14T19:16:47Z </updated>
       
         
           <category>mypubs</category>
@@ -52,8 +52,8 @@
       
       <id>https://example.com/content/pub_type/3-preprints/</id>
       <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/3-preprints/"/>
-      <published>2025-06-14T19:06:46Z</published>
-      <updated>2025-06-14T19:06:46Z </updated>
+      <published>2025-06-14T19:16:47Z</published>
+      <updated>2025-06-14T19:16:47Z </updated>
       
         
           <category>mypubs</category>
