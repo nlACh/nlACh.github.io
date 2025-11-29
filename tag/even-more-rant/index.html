@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>!function(){try{var t=localStorage.getItem("theme")||"light";document.documentElement.setAttribute("data-theme",t)}catch(t){document.documentElement.setAttribute("data-theme","light")}}()</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -67,20 +68,25 @@
 <nav class="main-nav" role="navigation" aria-label="Main navigation">
 <div class="nav-container wrapper">
 <a href="/" class="nav-brand">Nilayan Paul</a>
+<div class="nav-right">
+<button class="theme-toggle-button" aria-label="Toggle dark/light mode" onclick="toggleTheme()">
+<span class="theme-icon-light">☀️</span>
+<span class="theme-icon-dark">🌙</span>
+</button>
 <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
 
 </button>
+</div>
 <ul class="nav-menu">
 <li><a href="/">Home</a></li>
 <li><a href="/research/">Research</a></li>
-<li><a href="/posters/">Posters</a></li>
 <li><a href="/cv/">CV</a></li>
 <li><a href="/posts/">Blog</a></li>
 </ul>
 </div>
 </nav>
 </header>
-<script>document.addEventListener("DOMContentLoaded",function(){const t=document.querySelector(".nav-toggle"),n=document.querySelector(".nav-menu");t&&n&&t.addEventListener("click",function(){var e="true"===t.getAttribute("aria-expanded");t.setAttribute("aria-expanded",!e),n.classList.toggle("nav-menu-open")})})</script>
+<script>function toggleTheme(){var t=document.documentElement,e="dark"===t.getAttribute("data-theme")?"light":"dark",a=document.querySelector(".theme-toggle-button");t.setAttribute("data-theme",e),a&&a.setAttribute("aria-label","dark"==e?"Switch to light mode":"Switch to dark mode");try{localStorage.setItem("theme",e)}catch(t){}}document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".theme-toggle-button"),e=document.documentElement.getAttribute("data-theme");t&&t.setAttribute("aria-label","dark"===e?"Switch to light mode":"Switch to dark mode");const a=document.querySelector(".nav-toggle"),o=document.querySelector(".nav-menu");a&&o&&a.addEventListener("click",function(){var t="true"===a.getAttribute("aria-expanded");a.setAttribute("aria-expanded",!t),o.classList.toggle("nav-menu-open")})})</script>
 <main id="main-content" role="main">
 <section class="wrapper layout-grid">
 <h1 class="page-header layout-span">Tagged “Even More rant”</h1>
@@ -103,19 +109,11 @@
 <p>University of Calcutta, India</p>
 <p><a href="mailto:nlpl931@gmail.com">nlpl931@gmail.com</a></p>
 </div>
-<div class="footer-links">
-<h3>Research Profiles</h3>
-<ul>
-<li><a href="https://scholar.google.com/citations?user=dvUpRO4AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-<li><a href="https://researchgate.net/profile/Nilayan-Paul" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
-</ul>
-</div>
 <div class="footer-site">
-<h3>Site</h3>
+<h3>Site Map</h3>
 <ul>
 <li><a href="/">Home</a></li>
-<li><a href="/research/">Research</a></li>
-<li><a href="/posters/">Posters</a></li>
+<li><a href="/research/">Research &amp; Publications</a></li>
 <li><a href="/cv/">CV</a></li>
 <li><a href="/posts/">Blog</a></li>
 </ul>
@@ -123,7 +121,7 @@
 </div>
 <div class="footer-bottom">
 <p>&copy; 2025 Nilayan Paul. All rights reserved.</p>
-<p>Built with <a href="https://www.11ty.dev/">Eleventy</a></p>
+<p>Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a></p>
 </div>
 </div>
 </footer>
