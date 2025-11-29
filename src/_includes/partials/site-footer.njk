@@ -1,6 +1,36 @@
-<footer class="site-footer wrapper layout-grid flow">
-  <div class="layout-span">
-    <p>&copy; {{ helpers.dateNow | dateToYear }} Nilayan Paul</p>
-    <p>Site built with <a href="https://www.11ty.dev/">11ty</a>. Theme template <a href="https://github.com/kevh-c/11ty-get-going">11ty-get-going</a></p>
+<footer class="site-footer" role="contentinfo">
+  <div class="wrapper footer-content">
+    <div class="footer-main">
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p><strong>{{ config.author.name }}</strong></p>
+        <p>Senior Research Fellow</p>
+        <p>QMat&DigiMF Research Group</p>
+        <p>Department of Electronic Science</p>
+        <p>University of Calcutta, India</p>
+        <p><a href="mailto:{{ config.author.email }}">{{ config.author.email }}</a></p>
+      </div>
+      <div class="footer-links">
+        <h3>Research Profiles</h3>
+        <ul>
+          <li><a href="{{ config.social.googleScholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+          <li><a href="{{ config.social.researchGate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+        </ul>
+      </div>
+      <div class="footer-site">
+        <h3>Site</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/research/">Research</a></li>
+          <li><a href="/posters/">Posters</a></li>
+          <li><a href="/cv/">CV</a></li>
+          <li><a href="/posts/">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ helpers.dateNow | dateToYear }} {{ config.author.name }}. All rights reserved.</p>
+      <p>Built with <a href="https://www.11ty.dev/">Eleventy</a></p>
+    </div>
   </div>
 </footer>

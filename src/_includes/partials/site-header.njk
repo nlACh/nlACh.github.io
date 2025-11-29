@@ -1,24 +1,35 @@
 {# Skip to main content https://design-system.service.gov.uk/components/skip-link/ #}
-{# We'll render home "/" manually to avoid any navigation headaches for rendering active class #}
-{# We loop through eleventyNavigation and check if item.url e.g. /posts/ is in page.url and set active class. Stuck with this method for the moment until a relationship between Eleventy Navigation and Eleventy Pagination is figured out #}
-{# Recommend using aria-current="page" instead of active class if your project is surfacing all navigation items #}
 
 <a class="skip-link visually-hidden" href="#main-content">Skip to main content</a>
-<header>
-	<nav class="main-nav">
-		<div class="wrapper layout-grid">
-			<ul class="layout-span">
-				<li><a href="/" {% if page.url == "/" %}class="main-nav-item--active"{% endif %}>Home</a></li>
-				{% for item in collections.all | eleventyNavigation %}
-					<li>
-						<a href="{{ item.url }}" 
-							{% if item.url in page.url %} 
-								class="main-nav-item--active"
-							{% endif %}
-						>{{ item.title }}</a>
-					</li>
-				{% endfor %}
+<header class="site-header">
+	<nav class="main-nav" role="navigation" aria-label="Main navigation">
+		<div class="nav-container wrapper">
+			<a href="/" class="nav-brand">{{ config.projectName }}</a>
+			<button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+				<span class="nav-toggle-icon"></span>
+			</button>
+			<ul class="nav-menu">
+				<li><a href="/" {% if page.url == "/" %}class="nav-active" aria-current="page"{% endif %}>Home</a></li>
+				<li><a href="/research/" {% if "/research" in page.url %}class="nav-active" aria-current="page"{% endif %}>Research</a></li>
+				<li><a href="/posters/" {% if "/posters" in page.url %}class="nav-active" aria-current="page"{% endif %}>Posters</a></li>
+				<li><a href="/cv/" {% if "/cv" in page.url %}class="nav-active" aria-current="page"{% endif %}>CV</a></li>
+				<li><a href="/posts/" {% if "/posts" in page.url %}class="nav-active" aria-current="page"{% endif %}>Blog</a></li>
 			</ul>
 		</div>
 	</nav>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	const navToggle = document.querySelector('.nav-toggle');
+	const navMenu = document.querySelector('.nav-menu');
+	
+	if (navToggle && navMenu) {
+		navToggle.addEventListener('click', function() {
+			const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+			navToggle.setAttribute('aria-expanded', !isExpanded);
+			navMenu.classList.toggle('nav-menu-open');
+		});
+	}
+});
+</script>
