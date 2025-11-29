@@ -1,21 +1,33 @@
 export default {
 	projectName: "Nilayan Paul",
-	description: "My Site",
+	description: "Nilayan Paul - Senior Research Fellow specializing in quantum transport in nanoscale electronic devices, NEGF techniques, quantum computing, and semiconductor device fabrication at the University of Calcutta.",
 	shortName: "nlplSite",
 	domain:
-		process.env.ELEVENTY_RUN_MODE == "serve" ? "http://localhost:8080" : "https://example.com",
+		process.env.ELEVENTY_RUN_MODE == "serve" ? "http://localhost:8080" : "https://nlach.github.io",
 	robots: "index, follow",
-	themeColor: "#FFFFFF",
-	backgroundColor: "#FFFFFF",
+	themeColor: "#1a365d",
+	backgroundColor: "#f7fafc",
 	author: {
-		name: "N Paul",
+		name: "Nilayan Paul",
 		email: "nlpl931@gmail.com",
 	},
+	keywords: "quantum transport, nanoscale devices, NEGF, Non-Equilibrium Green's Function, quantum computing, semiconductor physics, quantum dots, nanowire FETs, finFETs, electron beam lithography, voltage-tunable quantum dots, charge qubit, resonant tunneling",
 	identity: [
 		{
 			rel: "me",
-			url: "nlach.github.io",
+			url: "https://nlach.github.io",
 		},
 	],
-
+	og: {
+		type: "website",
+		locale: "en_US",
+		image: {
+			rel: "/media/chobi.png",
+			alt: "Nilayan Paul - Researcher in Quantum Transport and Nanoscale Devices"
+		}
+	},
+	social: {
+		googleScholar: "https://scholar.google.com/citations?user=dvUpRO4AAAAJ&hl=en",
+		researchGate: "https://researchgate.net/profile/Nilayan-Paul"
+	}
 };

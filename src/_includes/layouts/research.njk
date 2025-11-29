@@ -1,0 +1,158 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="page-section wrapper">
+  <header class="page-header-section">
+    <h1>{{ title }}</h1>
+    <p class="page-intro">{{ content | safe }}</p>
+  </header>
+
+  {# Journal Publications #}
+  <section class="publications-section" id="journals">
+    <h2><span class="section-icon">📄</span> Journal Publications</h2>
+    <div class="publications-grid">
+      {% for item in collections.publication_id %}
+        <article class="publication-card">
+          <div class="pub-content">
+            <h3 class="pub-title">{{ item.data.title }}</h3>
+            <p class="pub-authors">{{ item.data.authors }}</p>
+            <p class="pub-venue">
+              <strong>{{ item.data.jorunal }}</strong>
+              {% if item.data.pub_year %} ({{ item.data.pub_year }}){% endif %}
+            </p>
+            {% if item.data.image %}
+            <div class="pub-image">
+              <img src="/content/pub_type/1-pubs/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+            </div>
+            {% endif %}
+          </div>
+          <div class="pub-actions">
+            {% if item.data.doi %}
+              <a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span>View Paper</span>
+              </a>
+            {% endif %}
+            {% if item.data.abstract %}
+              <button class="btn btn-secondary collapsible" data-target="abstract-j{{ loop.index }}">Abstract</button>
+            {% endif %}
+          </div>
+          {% if item.data.abstract %}
+          <div class="pub-abstract" id="abstract-j{{ loop.index }}" style="display: none;">
+            <p>{{ item.data.abstract }}</p>
+          </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# Conference Papers #}
+  <section class="publications-section" id="conferences">
+    <h2><span class="section-icon">🎤</span> Conference Papers</h2>
+    <div class="publications-grid">
+      {% for item in collections.conf_id %}
+        <article class="publication-card">
+          <div class="pub-content">
+            <h3 class="pub-title">{{ item.data.title }}</h3>
+            <p class="pub-authors">{{ item.data.authors }}</p>
+            <p class="pub-venue">{{ item.data.event }}</p>
+            {% if item.data.image %}
+            <div class="pub-image">
+              <img src="/content/pub_type/2-confs/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+            </div>
+            {% endif %}
+          </div>
+          <div class="pub-actions">
+            {% if item.data.proceedings %}
+              <a href="{{ item.data.proceedings }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span>Proceedings</span>
+              </a>
+            {% endif %}
+            {% if item.data.presentation_file %}
+              <a href="/content/pub_type/2-confs/{{ item.data.presentation_file }}" download class="btn btn-secondary">
+                <span>📊 Slides</span>
+              </a>
+            {% endif %}
+            {% if item.data.abstract_file %}
+              <a href="/content/pub_type/2-confs/{{ item.data.abstract_file }}" download class="btn btn-outline">
+                <span>Abstract</span>
+              </a>
+            {% endif %}
+            {% if item.data.poster_file %}
+              <a href="/content/pub_type/2-confs/{{ item.data.poster_file }}" download class="btn btn-outline">
+                <span>📌 Poster</span>
+              </a>
+            {% endif %}
+            {% if item.data.abstract %}
+              <button class="btn btn-secondary collapsible" data-target="abstract-c{{ loop.index }}">Abstract</button>
+            {% endif %}
+          </div>
+          {% if item.data.abstract %}
+          <div class="pub-abstract" id="abstract-c{{ loop.index }}" style="display: none;">
+            <p>{{ item.data.abstract }}</p>
+          </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# Preprints #}
+  <section class="publications-section" id="preprints">
+    <h2><span class="section-icon">📝</span> Preprints</h2>
+    <div class="publications-grid">
+      {% for item in collections.preprint_id %}
+        <article class="publication-card">
+          <div class="pub-content">
+            <h3 class="pub-title">{{ item.data.title }}</h3>
+            <p class="pub-authors">{{ item.data.authors }}</p>
+            <p class="pub-venue">Preprint {% if item.data.pub_year %}({{ item.data.pub_year }}){% endif %}</p>
+            {% if item.data.image %}
+            <div class="pub-image">
+              <img src="/content/pub_type/3-preprints/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+            </div>
+            {% endif %}
+          </div>
+          <div class="pub-actions">
+            {% if item.data.preprint_addr %}
+              <a href="{{ item.data.preprint_addr }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <span>View Preprint</span>
+              </a>
+            {% endif %}
+            {% if item.data.alt_available == "Yes" and item.data.alt_addr %}
+              <a href="{{ item.data.alt_addr }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <span>Alternative Link</span>
+              </a>
+            {% endif %}
+            {% if item.data.abstract %}
+              <button class="btn btn-secondary collapsible" data-target="abstract-p{{ loop.index }}">Abstract</button>
+            {% endif %}
+          </div>
+          {% if item.data.abstract %}
+          <div class="pub-abstract" id="abstract-p{{ loop.index }}" style="display: none;">
+            <p>{{ item.data.abstract }}</p>
+          </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const collapsibles = document.querySelectorAll('.collapsible');
+  collapsibles.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const targetId = this.getAttribute('data-target');
+      const target = document.getElementById(targetId);
+      if (target) {
+        const isVisible = target.style.display === 'block';
+        target.style.display = isVisible ? 'none' : 'block';
+        this.classList.toggle('active', !isVisible);
+      }
+    });
+  });
+});
+</script>
+{% endblock %}

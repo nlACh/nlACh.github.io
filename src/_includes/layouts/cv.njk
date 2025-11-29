@@ -1,0 +1,145 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="page-section wrapper">
+  <header class="page-header-section cv-header">
+    <h1>{{ title }}</h1>
+    <div class="cv-download">
+      <a href="/media/NPaul_CV.pdf" download="Nilayan_Paul_CV.pdf" class="btn btn-primary btn-large">
+        <span>📥 Download CV (PDF)</span>
+      </a>
+    </div>
+  </header>
+
+  <article class="cv-content">
+    {# Personal Information #}
+    <section class="cv-section">
+      <h2>Personal Information</h2>
+      <div class="cv-info-grid">
+        <div class="cv-info-item">
+          <strong>Name:</strong> {{ config.author.name }}
+        </div>
+        <div class="cv-info-item">
+          <strong>Email:</strong> <a href="mailto:{{ config.author.email }}">{{ config.author.email }}</a>
+        </div>
+        <div class="cv-info-item">
+          <strong>Website:</strong> <a href="{{ config.domain }}">{{ config.domain }}</a>
+        </div>
+      </div>
+    </section>
+
+    {# Current Position #}
+    <section class="cv-section">
+      <h2>Current Position</h2>
+      <div class="cv-entry">
+        <h3>Senior Research Fellow</h3>
+        <p class="cv-institution">Quantum Scale Materials and Digital Microfluidics Research Group (QMat&DigiMF)</p>
+        <p class="cv-details">Department of Electronic Science, University of Calcutta, India</p>
+        <p class="cv-details">Supervisor: Professor Sanatan Chattopadhyay</p>
+      </div>
+    </section>
+
+    {# Research Interests #}
+    <section class="cv-section">
+      <h2>Research Interests</h2>
+      <ul class="cv-list">
+        <li>Quantum transport in nanoscale electronic devices</li>
+        <li>Non-Equilibrium Green's Function (NEGF) techniques</li>
+        <li>Voltage-tunable quantum dots (VTQDs) for quantum computing</li>
+        <li>Modeling of nanoscale field effect transistors (finFETs, nanowire FETs)</li>
+        <li>Charge qubit design and optimization</li>
+        <li>Semiconductor device fabrication</li>
+        <li>Electron beam lithography</li>
+        <li>Resonant tunneling devices</li>
+      </ul>
+    </section>
+
+    {# Skills & Expertise #}
+    <section class="cv-section">
+      <h2>Skills & Expertise</h2>
+      <div class="cv-skills">
+        <div class="cv-skill-category">
+          <h3>Theoretical & Computational</h3>
+          <ul class="cv-list">
+            <li>Non-Equilibrium Green's Function (NEGF) formalism</li>
+            <li>Schrödinger-Poisson self-consistent framework</li>
+            <li>Quantum transport modeling</li>
+            <li>Device simulation and modeling</li>
+          </ul>
+        </div>
+        <div class="cv-skill-category">
+          <h3>Experimental</h3>
+          <ul class="cv-list">
+            <li>Semiconductor device fabrication</li>
+            <li>Electron beam lithography</li>
+          </ul>
+        </div>
+        <div class="cv-skill-category">
+          <h3>Research Areas</h3>
+          <ul class="cv-list">
+            <li>Quantum dots and quantum computing</li>
+            <li>Nanowire FETs and finFETs</li>
+            <li>Resonant tunneling transport</li>
+            <li>Beyond Moore devices</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {# Fellowships & Awards #}
+    <section class="cv-section">
+      <h2>Fellowships & Awards</h2>
+      <div class="cv-entry">
+        <h3>UGC Research Fellowship</h3>
+        <p class="cv-details">University Grants Commission, India</p>
+        <p class="cv-description">Fellowship supporting doctoral research in quantum transport and nanoscale devices.</p>
+      </div>
+    </section>
+
+    {# Publications Summary #}
+    <section class="cv-section">
+      <h2>Publications</h2>
+      <div class="cv-pub-summary">
+        <div class="cv-pub-count">
+          <span class="count">{{ collections.publication_id | length }}</span>
+          <span class="label">Journal Papers</span>
+        </div>
+        <div class="cv-pub-count">
+          <span class="count">{{ collections.conf_id | length }}</span>
+          <span class="label">Conference Papers</span>
+        </div>
+        <div class="cv-pub-count">
+          <span class="count">{{ collections.preprint_id | length }}</span>
+          <span class="label">Preprints</span>
+        </div>
+      </div>
+      <p class="cv-pub-link"><a href="/research/">View all publications →</a></p>
+
+      {# Selected Publications #}
+      <h3>Selected Publications</h3>
+      
+      <div class="cv-publications">
+        {% for item in collections.publication_id %}
+        <div class="cv-pub-entry">
+          <p class="cv-pub-title">{{ item.data.title }}</p>
+          <p class="cv-pub-authors">{{ item.data.authors }}</p>
+          <p class="cv-pub-venue"><em>{{ item.data.jorunal }}</em>{% if item.data.pub_year %}, {{ item.data.pub_year }}{% endif %}</p>
+          {% if item.data.doi %}
+          <p class="cv-pub-doi"><a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">{{ item.data.doi }}</a></p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    {# Research Profiles #}
+    <section class="cv-section">
+      <h2>Research Profiles</h2>
+      <ul class="cv-list cv-profiles">
+        <li><a href="{{ config.social.googleScholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a href="{{ config.social.researchGate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+      </ul>
+    </section>
+  </article>
+</section>
+{% endblock %}

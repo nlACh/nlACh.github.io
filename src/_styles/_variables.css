@@ -1,9 +1,21 @@
 :root {
-	/* Colour */
-	--color-surface-default: hsl(33, 15%, 88%);
-	--color-surface-secondary: hsl(33, 13%, 94%);
+	/* Professional Academic Color Scheme */
+	--color-primary: #1a365d;
+	--color-primary-dark: #0f2444;
+	--color-primary-light: #63b3ed;
+	--color-secondary: #2d3748;
+	--color-accent: #3182ce;
+	
+	/* Surface Colors */
+	--color-surface-default: #f7fafc;
+	--color-surface-secondary: #edf2f7;
+	--color-surface-card: #ffffff;
 	--color-highlight: hsl(216, 100%, 88%);
-	--color-text-default: hsl(105, 4%, 22%);
+	
+	/* Text Colors */
+	--color-text-default: #1a202c;
+	--color-text-secondary: #4a5568;
+	--color-text-muted: #718096;
 	--color-text-code-default: hsl(105, 10%, 42%);
 	--color-text-code-attr: hsl(358, 85%, 38%);
 	--color-text-code-function: hsl(24, 85%, 31%);
@@ -11,14 +23,16 @@
 	--color-text-code-selector: hsl(299, 54%, 40%);
 	--color-text-code-variable: hsl(143, 59%, 34%);
 	--color-text-code-url: hsl(179, 50%, 30%);
-	--color-interactive-default: hsl(216, 100%, 56%);
-	--color-interactive-hover: hsl(216, 100%, 26%);
-	--color-interactive-focus: hsl(216, 100%, 26%);
-	--color-interactive-focus-ring: hsl(216, 100%, 76%);
-	--color-border-default: hsl(83, 4%, 68%);
+	
+	/* Interactive Colors */
+	--color-interactive-default: #3182ce;
+	--color-interactive-hover: #2c5282;
+	--color-interactive-focus: #2c5282;
+	--color-interactive-focus-ring: #90cdf4;
+	--color-border-default: #e2e8f0;
 
 	/* Font */
-	--font-family-sans: system-ui, -apple-system, sans-serif;
+	--font-family-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 	--font-family-code: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
 		"DejaVu Sans Mono", monospace;
 
@@ -33,8 +47,8 @@
 
 	/* Leading */
 	--leading-tight: 1.1;
-	--leading-default: 1.4;
-	--leading-loose: 1.6;
+	--leading-default: 1.5;
+	--leading-loose: 1.7;
 
 	/* Measure */
 	--measure-default: 70ch;
@@ -63,19 +77,29 @@
 	--space-s-l: clamp(1rem, calc(0.71rem + 1.43vw), 2rem);
 
 	/* Border radius */
-	--border-radius-small: 1rem;
+	--border-radius-small: 0.5rem;
+	--border-radius-medium: 0.75rem;
+	--border-radius-large: 1rem;
 
 	/* Max width */
 	--wrapper-max: 64rem;
+	
+	/* Shadows */
+	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Dark mode preferences */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-surface-default: hsl(105, 4%, 8%);
-		--color-surface-secondary: hsl(105, 4%, 4%);
+		--color-surface-default: #1a202c;
+		--color-surface-secondary: #2d3748;
+		--color-surface-card: #2d3748;
 		--color-highlight: hsl(216, 100%, 18%);
-		--color-text-default: hsl(33, 15%, 88%);
+		--color-text-default: #f7fafc;
+		--color-text-secondary: #e2e8f0;
+		--color-text-muted: #a0aec0;
 		--color-text-code-default: hsl(33, 15%, 68%);
 		--color-text-code-attr: hsl(358, 65%, 68%);
 		--color-text-code-function: hsl(24, 85%, 61%);
@@ -85,6 +109,8 @@
 		--color-text-code-url: hsl(179, 50%, 60%);
 		--color-interactive-hover: hsl(216, 100%, 86%);
 		--color-interactive-focus: hsl(216, 100%, 86%);
-		--color-border-default: hsl(83, 4%, 28%);
+		--color-border-default: #4a5568;
+		--color-primary: #2d3748;
+		--color-primary-dark: #1a202c;
 	}
 }

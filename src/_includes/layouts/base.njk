@@ -6,11 +6,9 @@
 
   <body>
     {% include "partials/site-header.njk" %}
-    <main id="main-content">
+    <main id="main-content" role="main">
       {% block content %}{% endblock %}
     </main>
-    
+    {% include "partials/site-footer.njk" %}
   </body>
-  {% include "partials/page-footer.njk" %}
-  {% include "partials/site-footer.njk" %}
 </html>
