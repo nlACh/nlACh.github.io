@@ -1,8 +1,8 @@
 {
 	"name": "",
 	"short_name": "nlplSite",
-	"theme_color": "#1a365d",
-	"background_color": "#f7fafc",
+	"theme_color": "#707070ff",
+	"background_color": "#dadadaff",
 	"start_url": "/",
 	"display": "minimal-UI",
 	"icons": [
