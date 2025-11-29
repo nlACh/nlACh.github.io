@@ -1,21 +1,21 @@
 :root {
-	/* Professional Academic Color Scheme */
+	/* Professional Light Mode Color Scheme (WCAG AAA Compliant) */
 	--color-primary: #1a365d;
 	--color-primary-dark: #0f2444;
-	--color-primary-light: #63b3ed;
-	--color-secondary: #2d3748;
-	--color-accent: #3182ce;
+	--color-primary-light: #60A5FA;
+	--color-secondary: #2C3E50;
+	--color-accent: #2563EB;
 	
-	/* Surface Colors */
-	--color-surface-default: #f7fafc;
-	--color-surface-secondary: #edf2f7;
-	--color-surface-card: #ffffff;
+	/* Surface Colors - Light Mode */
+	--color-surface-default: #FFFFFF;
+	--color-surface-secondary: #F8F9FA;
+	--color-surface-card: #FFFFFF;
 	--color-highlight: hsl(216, 100%, 88%);
 	
-	/* Text Colors */
-	--color-text-default: #1a202c;
-	--color-text-secondary: #4a5568;
-	--color-text-muted: #718096;
+	/* Text Colors - Light Mode */
+	--color-text-default: #1A1A1A;
+	--color-text-secondary: #2C3E50;
+	--color-text-muted: #4A5568;
 	--color-text-code-default: hsl(105, 10%, 42%);
 	--color-text-code-attr: hsl(358, 85%, 38%);
 	--color-text-code-function: hsl(24, 85%, 31%);
@@ -24,17 +24,16 @@
 	--color-text-code-variable: hsl(143, 59%, 34%);
 	--color-text-code-url: hsl(179, 50%, 30%);
 	
-	/* Interactive Colors */
-	--color-interactive-default: #3182ce;
-	--color-interactive-hover: #2c5282;
-	--color-interactive-focus: #2c5282;
-	--color-interactive-focus-ring: #90cdf4;
-	--color-border-default: #e2e8f0;
+	/* Interactive Colors - Light Mode */
+	--color-interactive-default: #2563EB;
+	--color-interactive-hover: #1D4ED8;
+	--color-interactive-focus: #1D4ED8;
+	--color-interactive-focus-ring: #60A5FA;
+	--color-border-default: #E5E7EB;
 
-	/* Font */
-	--font-family-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-	--font-family-code: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-		"DejaVu Sans Mono", monospace;
+	/* Font - Times New Roman for professional academic appearance */
+	--font-family-sans: 'Times New Roman', Georgia, 'Times', serif;
+	--font-family-code: 'Consolas', 'Courier New', 'Monaco', monospace;
 
 	/* Fluid type and space, thanks to https://utopia.fyi/ */
 	/* Font size */
@@ -90,16 +89,50 @@
 	--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Dark mode preferences */
+/* Dark mode - applied via data-theme attribute */
+[data-theme="dark"] {
+	/* Surface Colors - Dark Mode */
+	--color-surface-default: #1A1A1A;
+	--color-surface-secondary: #2D3748;
+	--color-surface-card: #2D3748;
+	--color-highlight: hsl(216, 100%, 18%);
+	
+	/* Text Colors - Dark Mode (WCAG AAA Compliant) */
+	--color-text-default: #F8F9FA;
+	--color-text-secondary: #E2E8F0;
+	--color-text-muted: #A0AEC0;
+	--color-text-code-default: hsl(33, 15%, 68%);
+	--color-text-code-attr: hsl(358, 65%, 68%);
+	--color-text-code-function: hsl(24, 85%, 61%);
+	--color-text-code-class: hsl(41, 92%, 65%);
+	--color-text-code-selector: hsl(299, 34%, 70%);
+	--color-text-code-variable: hsl(143, 39%, 64%);
+	--color-text-code-url: hsl(179, 50%, 60%);
+	
+	/* Interactive Colors - Dark Mode */
+	--color-interactive-default: #60A5FA;
+	--color-interactive-hover: #93C5FD;
+	--color-interactive-focus: #93C5FD;
+	--color-interactive-focus-ring: #3B82F6;
+	--color-border-default: #374151;
+	
+	/* Primary Colors - Dark Mode */
+	--color-primary: #2D3748;
+	--color-primary-dark: #1A1A1A;
+	--color-primary-light: #60A5FA;
+	--color-accent: #60A5FA;
+}
+
+/* Also support system preference when no theme is set */
 @media (prefers-color-scheme: dark) {
-	:root {
-		--color-surface-default: #1a202c;
-		--color-surface-secondary: #2d3748;
-		--color-surface-card: #2d3748;
+	:root:not([data-theme="light"]) {
+		--color-surface-default: #1A1A1A;
+		--color-surface-secondary: #2D3748;
+		--color-surface-card: #2D3748;
 		--color-highlight: hsl(216, 100%, 18%);
-		--color-text-default: #f7fafc;
-		--color-text-secondary: #e2e8f0;
-		--color-text-muted: #a0aec0;
+		--color-text-default: #F8F9FA;
+		--color-text-secondary: #E2E8F0;
+		--color-text-muted: #A0AEC0;
 		--color-text-code-default: hsl(33, 15%, 68%);
 		--color-text-code-attr: hsl(358, 65%, 68%);
 		--color-text-code-function: hsl(24, 85%, 61%);
@@ -107,10 +140,14 @@
 		--color-text-code-selector: hsl(299, 34%, 70%);
 		--color-text-code-variable: hsl(143, 39%, 64%);
 		--color-text-code-url: hsl(179, 50%, 60%);
-		--color-interactive-hover: hsl(216, 100%, 86%);
-		--color-interactive-focus: hsl(216, 100%, 86%);
-		--color-border-default: #4a5568;
-		--color-primary: #2d3748;
-		--color-primary-dark: #1a202c;
+		--color-interactive-default: #60A5FA;
+		--color-interactive-hover: #93C5FD;
+		--color-interactive-focus: #93C5FD;
+		--color-interactive-focus-ring: #3B82F6;
+		--color-border-default: #374151;
+		--color-primary: #2D3748;
+		--color-primary-dark: #1A1A1A;
+		--color-primary-light: #60A5FA;
+		--color-accent: #60A5FA;
 	}
 }

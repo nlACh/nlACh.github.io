@@ -15,6 +15,7 @@
 	z-index: 1000;
 	background-color: var(--color-primary);
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease;
 }
 
 .main-nav {
@@ -41,6 +42,61 @@
 
 .nav-brand:hover {
 	color: var(--color-primary-light);
+}
+
+.nav-right {
+	display: flex;
+	align-items: center;
+	gap: var(--space-xs);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background: transparent;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 1.2rem;
+	padding: 0;
+}
+
+.theme-toggle-button:hover {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.5);
+	transform: scale(1.1);
+}
+
+.theme-toggle-button:focus {
+	outline: 2px solid var(--color-interactive-focus-ring);
+	outline-offset: 2px;
+}
+
+.theme-toggle-button:focus-visible {
+	outline: 2px solid var(--color-interactive-focus-ring);
+	outline-offset: 2px;
+}
+
+/* Show sun icon in dark mode, moon icon in light mode */
+.theme-icon-light {
+	display: none;
+}
+
+.theme-icon-dark {
+	display: inline;
+}
+
+[data-theme="dark"] .theme-icon-light {
+	display: inline;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+	display: none;
 }
 
 .nav-menu {
@@ -118,6 +174,10 @@
 		display: block;
 	}
 
+	.nav-right {
+		order: 2;
+	}
+
 	.nav-menu {
 		display: none;
 		position: absolute;
@@ -140,5 +200,12 @@
 
 	.nav-container {
 		position: relative;
+		flex-wrap: wrap;
+	}
+
+	.theme-toggle-button {
+		width: 36px;
+		height: 36px;
+		font-size: 1rem;
 	}
 }
