@@ -1,27 +1,27 @@
 
 <?xml version="1.0" encoding="utf-8"?>
 
-<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://example.com/">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://nlach.github.io/">
   <title>Nilayan Paul</title>
-  <id>https://example.com/</id>
-  <updated>2025-10-02T05:54:12Z</updated>
-  <link rel="self" href="https://example.com/feed.xml" type="application/atom+xml"/>
-  <link rel="alternate" type="text/html" href="https://example.com/"/>
+  <id>https://nlach.github.io/</id>
+  <updated>2025-11-29T16:32:57Z</updated>
+  <link rel="self" href="https://nlach.github.io/feed.xml" type="application/atom+xml"/>
+  <link rel="alternate" type="text/html" href="https://nlach.github.io/"/>
   <author>
-    <name>N Paul</name>
+    <name>Nilayan Paul</name>
     <email>nlpl931@gmail.com</email>
   </author>
-  <icon>https://example.com/icon-512.jpg</icon>
+  <icon>https://nlach.github.io/icon-512.jpg</icon>
 
   
   
     <entry>
       <title>Journal Publications</title>
       
-      <id>https://example.com/content/pub_type/1-pubs/</id>
-      <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/1-pubs/"/>
-      <published>2025-10-02T05:54:12Z</published>
-      <updated>2025-10-02T05:54:12Z </updated>
+      <id>https://nlach.github.io/content/pub_type/1-pubs/</id>
+      <link rel="alternate" type="text/html" href="https://nlach.github.io/content/pub_type/1-pubs/"/>
+      <published>2025-11-29T16:32:57Z</published>
+      <updated>2025-11-29T16:32:57Z </updated>
       
         
           <category>mypubs</category>
@@ -34,10 +34,10 @@
     <entry>
       <title>Conferences</title>
       
-      <id>https://example.com/content/pub_type/2-confs/</id>
-      <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/2-confs/"/>
-      <published>2025-10-02T05:54:12Z</published>
-      <updated>2025-10-02T05:54:12Z </updated>
+      <id>https://nlach.github.io/content/pub_type/2-confs/</id>
+      <link rel="alternate" type="text/html" href="https://nlach.github.io/content/pub_type/2-confs/"/>
+      <published>2025-11-29T16:32:57Z</published>
+      <updated>2025-11-29T16:32:57Z </updated>
       
         
           <category>mypubs</category>
@@ -50,10 +50,10 @@
     <entry>
       <title>Preprints</title>
       
-      <id>https://example.com/content/pub_type/3-preprints/</id>
-      <link rel="alternate" type="text/html" href="https://example.com/content/pub_type/3-preprints/"/>
-      <published>2025-10-02T05:54:12Z</published>
-      <updated>2025-10-02T05:54:12Z </updated>
+      <id>https://nlach.github.io/content/pub_type/3-preprints/</id>
+      <link rel="alternate" type="text/html" href="https://nlach.github.io/content/pub_type/3-preprints/"/>
+      <published>2025-11-29T16:32:57Z</published>
+      <updated>2025-11-29T16:32:57Z </updated>
       
         
           <category>mypubs</category>
