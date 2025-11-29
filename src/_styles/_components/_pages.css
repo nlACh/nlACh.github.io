@@ -1,0 +1,449 @@
+/* Page Section */
+.page-section {
+	max-width: var(--wrapper-max);
+	margin: 0 auto;
+	padding: var(--space-l) var(--space-m);
+}
+
+.page-header-section {
+	margin-bottom: var(--space-xl);
+	text-align: center;
+}
+
+.page-header-section h1 {
+	color: var(--color-primary);
+	margin-bottom: var(--space-s);
+}
+
+.page-intro {
+	font-size: var(--step-1);
+	color: var(--color-text-secondary);
+	max-width: 70ch;
+	margin: 0 auto;
+}
+
+/* Publications Section */
+.publications-section {
+	margin-bottom: var(--space-2xl);
+}
+
+.publications-section h2 {
+	color: var(--color-primary);
+	font-size: var(--step-2);
+	margin-bottom: var(--space-l);
+	padding-bottom: var(--space-xs);
+	border-bottom: 3px solid var(--color-primary-light);
+	display: flex;
+	align-items: center;
+	gap: var(--space-xs);
+}
+
+.section-icon {
+	font-size: 1.2em;
+}
+
+.publications-grid {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-l);
+}
+
+/* Publication Card */
+.publication-card {
+	background: var(--color-surface-card);
+	border-radius: var(--border-radius-medium);
+	padding: var(--space-l);
+	box-shadow: var(--shadow-md);
+	border: 1px solid var(--color-border-default);
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.publication-card:hover {
+	box-shadow: var(--shadow-lg);
+	transform: translateY(-2px);
+}
+
+.pub-content {
+	margin-bottom: var(--space-m);
+}
+
+.pub-title {
+	font-size: var(--step-1);
+	color: var(--color-primary);
+	margin: 0 0 var(--space-xs) 0;
+	line-height: var(--leading-default);
+}
+
+.pub-authors {
+	color: var(--color-text-secondary);
+	font-size: var(--step-0);
+	margin: 0 0 var(--space-2xs) 0;
+}
+
+.pub-venue {
+	color: var(--color-text-muted);
+	font-size: 0.95rem;
+	margin: 0 0 var(--space-s) 0;
+}
+
+.pub-image {
+	margin-top: var(--space-m);
+	max-width: 400px;
+}
+
+.pub-image img {
+	border-radius: var(--border-radius-small);
+	border: 1px solid var(--color-border-default);
+}
+
+.pub-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-xs);
+	margin-bottom: var(--space-s);
+}
+
+.pub-abstract {
+	margin-top: var(--space-m);
+	padding: var(--space-m);
+	background: var(--color-surface-secondary);
+	border-radius: var(--border-radius-small);
+	border-left: 4px solid var(--color-primary);
+}
+
+.pub-abstract p {
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: var(--leading-loose);
+	color: var(--color-text-secondary);
+}
+
+/* Buttons */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-2xs);
+	padding: var(--space-2xs) var(--space-s);
+	font-family: var(--font-family-sans);
+	font-size: 0.9rem;
+	font-weight: 500;
+	text-decoration: none;
+	border-radius: var(--border-radius-small);
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.btn-primary {
+	background: var(--color-primary);
+	color: white;
+	border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+	background: var(--color-primary-dark);
+	border-color: var(--color-primary-dark);
+	color: white;
+}
+
+.btn-secondary {
+	background: var(--color-surface-secondary);
+	color: var(--color-primary);
+	border-color: var(--color-border-default);
+}
+
+.btn-secondary:hover {
+	background: var(--color-primary-light);
+	color: white;
+	border-color: var(--color-primary-light);
+}
+
+.btn-outline {
+	background: transparent;
+	color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+	background: var(--color-primary);
+	color: white;
+}
+
+.btn-large {
+	padding: var(--space-xs) var(--space-m);
+	font-size: var(--step-0);
+}
+
+.btn.active {
+	background: var(--color-primary);
+	color: white;
+}
+
+/* Posters Gallery */
+.posters-gallery {
+	display: grid;
+	gap: var(--space-l);
+}
+
+.poster-card {
+	display: grid;
+	grid-template-columns: 250px 1fr;
+	gap: var(--space-l);
+	background: var(--color-surface-card);
+	border-radius: var(--border-radius-medium);
+	padding: var(--space-l);
+	box-shadow: var(--shadow-md);
+	border: 1px solid var(--color-border-default);
+}
+
+@media (max-width: 768px) {
+	.poster-card {
+		grid-template-columns: 1fr;
+	}
+}
+
+.poster-preview {
+	background: var(--color-surface-secondary);
+	border-radius: var(--border-radius-small);
+	aspect-ratio: 3/4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.poster-placeholder {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--space-xs);
+	color: var(--color-text-muted);
+}
+
+.poster-icon {
+	font-size: 3rem;
+}
+
+.poster-info h2 {
+	font-size: var(--step-1);
+	color: var(--color-primary);
+	margin: 0 0 var(--space-s) 0;
+}
+
+.poster-venue {
+	color: var(--color-text-secondary);
+	margin: 0 0 var(--space-2xs) 0;
+}
+
+.poster-date {
+	color: var(--color-text-muted);
+	font-size: 0.9rem;
+	margin: 0 0 var(--space-2xs) 0;
+}
+
+.poster-authors {
+	color: var(--color-text-secondary);
+	margin: 0 0 var(--space-m) 0;
+}
+
+.poster-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-xs);
+}
+
+/* CV Page Styles */
+.cv-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--space-m);
+	text-align: left;
+}
+
+.cv-header h1 {
+	margin: 0;
+}
+
+.cv-content {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.cv-section {
+	margin-bottom: var(--space-xl);
+	padding-bottom: var(--space-l);
+	border-bottom: 1px solid var(--color-border-default);
+}
+
+.cv-section:last-child {
+	border-bottom: none;
+}
+
+.cv-section h2 {
+	color: var(--color-primary);
+	font-size: var(--step-2);
+	margin: 0 0 var(--space-m) 0;
+	padding-bottom: var(--space-2xs);
+	border-bottom: 3px solid var(--color-primary-light);
+}
+
+.cv-section h3 {
+	color: var(--color-secondary);
+	font-size: var(--step-1);
+	margin: 0 0 var(--space-2xs) 0;
+}
+
+.cv-info-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: var(--space-s);
+}
+
+.cv-info-item {
+	padding: var(--space-xs);
+	background: var(--color-surface-secondary);
+	border-radius: var(--border-radius-small);
+}
+
+.cv-entry {
+	margin-bottom: var(--space-m);
+}
+
+.cv-institution {
+	color: var(--color-text-secondary);
+	font-weight: 500;
+	margin: 0 0 var(--space-2xs) 0;
+}
+
+.cv-details {
+	color: var(--color-text-muted);
+	margin: 0 0 var(--space-2xs) 0;
+	font-size: 0.95rem;
+}
+
+.cv-description {
+	margin: var(--space-xs) 0 0 0;
+	font-size: 0.95rem;
+}
+
+.cv-list {
+	margin: 0;
+	padding-left: var(--space-m);
+}
+
+.cv-list li {
+	margin-bottom: var(--space-2xs);
+}
+
+.cv-skills {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: var(--space-l);
+}
+
+.cv-skill-category h3 {
+	margin-bottom: var(--space-xs);
+}
+
+.cv-pub-summary {
+	display: flex;
+	gap: var(--space-l);
+	margin-bottom: var(--space-m);
+	flex-wrap: wrap;
+}
+
+.cv-pub-count {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--space-m);
+	background: var(--color-surface-secondary);
+	border-radius: var(--border-radius-medium);
+	min-width: 100px;
+}
+
+.cv-pub-count .count {
+	font-size: var(--step-3);
+	font-weight: 700;
+	color: var(--color-primary);
+}
+
+.cv-pub-count .label {
+	font-size: 0.85rem;
+	color: var(--color-text-muted);
+	text-align: center;
+}
+
+.cv-pub-link {
+	margin-bottom: var(--space-l);
+}
+
+.cv-publications {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-m);
+}
+
+.cv-pub-entry {
+	padding: var(--space-m);
+	background: var(--color-surface-secondary);
+	border-radius: var(--border-radius-small);
+	border-left: 4px solid var(--color-primary);
+}
+
+.cv-pub-title {
+	font-weight: 600;
+	color: var(--color-text-default);
+	margin: 0 0 var(--space-2xs) 0;
+}
+
+.cv-pub-authors {
+	color: var(--color-text-secondary);
+	margin: 0 0 var(--space-2xs) 0;
+	font-size: 0.95rem;
+}
+
+.cv-pub-venue {
+	color: var(--color-text-muted);
+	margin: 0 0 var(--space-2xs) 0;
+	font-size: 0.9rem;
+}
+
+.cv-pub-doi {
+	margin: 0;
+	font-size: 0.85rem;
+}
+
+.cv-profiles {
+	display: flex;
+	gap: var(--space-l);
+	list-style: none;
+	padding: 0;
+}
+
+.cv-profiles li {
+	margin: 0;
+}
+
+/* Print Styles for CV */
+@media print {
+	.cv-download,
+	.site-header,
+	.site-footer,
+	.nav-toggle {
+		display: none !important;
+	}
+	
+	.cv-content {
+		max-width: 100%;
+	}
+	
+	.cv-section {
+		page-break-inside: avoid;
+	}
+	
+	.cv-pub-entry {
+		page-break-inside: avoid;
+	}
+}

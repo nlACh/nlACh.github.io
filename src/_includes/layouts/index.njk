@@ -4,28 +4,48 @@
 {% set profile_img = "media/chobi.png" %}
 
 {% block content %}
-  <section class="wrapper layout-grid">
-    <img src="{{ profile_img }}" width="200">
-    
-    <div class="layout-span layout-span--main | content-main flow">
-      {{ content | safe }}
+  <section class="hero-section wrapper">
+    <div class="hero-content">
+      <div class="hero-image">
+        <img src="{{ profile_img }}" alt="Profile photo of {{ config.author.name }}" width="200">
+      </div>
+      <div class="hero-text">
+        <h1>{{ config.author.name }}</h1>
+        <p class="hero-title">Senior Research Fellow</p>
+        <p class="hero-affiliation">QMat&DigiMF Research Group, University of Calcutta</p>
+      </div>
     </div>
-    
-    <div class="layout-span layout-span--aside">
-      <aside class="content-aside flow">
-        <h2>Quick Links</h2>
-        <p><h4>My research</h4></p>
-        <ul>
-  
-          {% for item in collections.feed %}
-            {% include "partials/site-post-list.njk" %}
-          {% endfor %}
+  </section>
 
-          <li><a href="https://scholar.google.com/citations?user=dvUpRO4AAAAJ&hl=en?" target="_blank">Google Scholar</a></li>
-          <li><a href="https://researchgate.net/profile/Nilayan-Paul" target="_blank">Researchgate</a></li>
-          <li><a href="media/CV_Paul.pdf" download="CV_Paul.pdf">CV</a></li>
-          
-        </ul>
+  <section class="wrapper main-content">
+    <div class="content-grid">
+      <article class="content-main flow">
+        <h2>About Me</h2>
+        {{ content | safe }}
+      </article>
+      
+      <aside class="content-sidebar">
+        <div class="sidebar-card">
+          <h3>Research Profiles</h3>
+          <ul class="quick-links">
+            <li><a href="{{ config.social.googleScholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+            <li><a href="{{ config.social.researchGate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+          </ul>
+        </div>
+        
+        <div class="sidebar-card">
+          <h3>Quick Links</h3>
+          <ul class="quick-links">
+            <li><a href="/research/">Publications</a></li>
+            <li><a href="/cv/">Curriculum Vitae</a></li>
+            <li><a href="media/NPaul_CV.pdf" download="NPaul_CV.pdf">Download CV (PDF)</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Contact</h3>
+          <p><a href="mailto:{{ config.author.email }}">{{ config.author.email }}</a></p>
+        </div>
       </aside>
     </div>
   </section>

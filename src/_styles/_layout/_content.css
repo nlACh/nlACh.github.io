@@ -1,6 +1,79 @@
+/* Hero Section */
+.hero-section {
+	padding: var(--space-xl) 0;
+	background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+	margin-bottom: var(--space-xl);
+}
+
+.hero-content {
+	display: flex;
+	align-items: center;
+	gap: var(--space-l);
+	max-width: var(--wrapper-max);
+	margin: 0 auto;
+	padding: 0 var(--space-m);
+}
+
+.hero-image img {
+	border-radius: 50%;
+	border: 4px solid white;
+	box-shadow: var(--shadow-lg);
+}
+
+.hero-text h1 {
+	color: white;
+	margin: 0;
+	font-size: var(--step-4);
+}
+
+.hero-title {
+	color: var(--color-primary-light);
+	font-size: var(--step-1);
+	margin: var(--space-2xs) 0;
+	font-weight: 500;
+}
+
+.hero-affiliation {
+	color: rgba(255, 255, 255, 0.9);
+	font-size: var(--step-0);
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	.hero-content {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+/* Main Content Grid */
+.main-content {
+	max-width: var(--wrapper-max);
+	margin: 0 auto;
+	padding: 0 var(--space-m);
+}
+
+.content-grid {
+	display: grid;
+	grid-template-columns: 1fr 300px;
+	gap: var(--space-xl);
+}
+
+@media (max-width: 900px) {
+	.content-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
 .content-main {
-	--flow-space: var(--space-2xs-xs);
-	margin-block-start: var(--space-s-m);
+	--flow-space: var(--space-s);
+}
+
+.content-main h2 {
+	color: var(--color-primary);
+	margin-bottom: var(--space-s);
+	padding-bottom: var(--space-2xs);
+	border-bottom: 2px solid var(--color-primary-light);
 }
 
 .content-main
@@ -24,6 +97,61 @@
 	--flow-space: var(--space-s-m);
 }
 
+/* Sidebar */
+.content-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-m);
+}
+
+.sidebar-card {
+	background: var(--color-surface-card);
+	border-radius: var(--border-radius-medium);
+	padding: var(--space-m);
+	box-shadow: var(--shadow-md);
+	border: 1px solid var(--color-border-default);
+}
+
+.sidebar-card h3 {
+	font-size: var(--step-0);
+	color: var(--color-primary);
+	margin: 0 0 var(--space-s) 0;
+	padding-bottom: var(--space-2xs);
+	border-bottom: 2px solid var(--color-primary-light);
+}
+
+.quick-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.quick-links li {
+	margin: 0;
+	padding: var(--space-2xs) 0;
+	border-bottom: 1px solid var(--color-border-default);
+}
+
+.quick-links li:last-child {
+	border-bottom: none;
+}
+
+.quick-links a {
+	text-decoration: none;
+	font-size: 0.95rem;
+}
+
+/* Content Highlight (Publication Cards) */
+.content-highlight {
+	margin-block-start: var(--space-m);
+	padding: var(--space-m);
+	border-radius: var(--border-radius-medium);
+	background-color: var(--color-surface-card);
+	box-shadow: var(--shadow-md);
+	border: 1px solid var(--color-border-default);
+}
+
+/* Content Aside */
 .content-aside {
 	--flow-space: var(--space-xs-s);
 	font-family: var(--font-family-sans);
@@ -35,31 +163,39 @@
 	background-color: var(--color-surface-primary);
 }
 
-.content-highlight {
-	margin-block-start: var(--space-l);
-	padding: var(--space-l);
-	border-radius: var(--border-radius-small);
-	background-color: var(--color-surface-secondary);
-}
-
+/* Collapsible Sections */
 .collapsible {
 	font-family: var(--font-family-sans);
-	font-weight: 800;
-    cursor: pointer;
-    padding: 10px;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;	
+	font-weight: 600;
+	cursor: pointer;
+	padding: var(--space-2xs) var(--space-s);
+	border: 1px solid var(--color-border-default);
+	border-radius: var(--border-radius-small);
+	text-align: left;
+	outline: none;
+	font-size: var(--step-0);
+	background-color: var(--color-surface-secondary);
+	color: var(--color-primary);
+	transition: background-color 0.2s ease;
 }
 
 .collapsible:hover {
-    background-color: var(--color-surface-default);
+	background-color: var(--color-primary-light);
+	color: white;
+}
+
+.collapsible.active {
+	background-color: var(--color-primary);
+	color: white;
 }
 
 .content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: var(--color-surface-secondary);
+	padding: var(--space-s);
+	display: none;
+	overflow: hidden;
+	background-color: var(--color-surface-secondary);
+	border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+	margin-top: -1px;
+	border: 1px solid var(--color-border-default);
+	border-top: none;
 }

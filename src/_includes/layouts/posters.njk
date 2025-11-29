@@ -1,0 +1,36 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<section class="page-section wrapper">
+  <header class="page-header-section">
+    <h1>{{ title }}</h1>
+    <p class="page-intro">{{ content | safe }}</p>
+  </header>
+
+  <div class="posters-gallery">
+    {# IWPSD 2023 Poster #}
+    <article class="poster-card">
+      <div class="poster-preview">
+        <div class="poster-placeholder">
+          <span class="poster-icon">📌</span>
+          <span>Research Poster</span>
+        </div>
+      </div>
+      <div class="poster-info">
+        <h2 class="poster-title">Understanding the composition dependent charge qubit performance of a dual-gate Al<sub>x</sub>Ga<sub>1-x</sub>As nanowire FET</h2>
+        <p class="poster-venue">22nd International Workshop on the Physics of Semiconductor Devices (IWPSD 2023)</p>
+        <p class="poster-date">December 13-17, 2023</p>
+        <p class="poster-authors">N. Paul, B. Nag Chowdhury, S. Chattopadhyay</p>
+        <div class="poster-actions">
+          <a href="/content/pub_type/2-confs/IWPSD2023_NPaul_Poster_V1.pdf" download class="btn btn-primary">
+            <span>📥 Download Poster (PDF)</span>
+          </a>
+          <a href="/content/pub_type/2-confs/Abstract_IWPSD23_NPaul.pdf" download class="btn btn-secondary">
+            <span>📄 Download Abstract</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %}

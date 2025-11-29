@@ -22,6 +22,7 @@
 @import url("./_styles/_components/_site-pagination.css");
 @import url("./_styles/_components/_card-list.css");
 @import url("./_styles/_components/_footnotes.css");
+@import url("./_styles/_components/_pages.css");
 
 /* Vendor */
 @import url("./_styles/_vendor/_prism.css");
