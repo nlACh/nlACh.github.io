@@ -27,10 +27,21 @@ html {
 	font-variant-ligatures: common-ligatures;
 	text-rendering: optimizeSpeed;
 	font-variation-settings: "slnt" 0; /* Variable font Safari fix */
+	scroll-behavior: smooth;
 }
 
 html:focus-within {
 	scroll-behavior: smooth;
+}
+
+/* Smooth theme transitions */
+body,
+.site-header,
+.publication-card,
+.cv-pub-entry,
+.sidebar-card,
+.btn {
+	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Edits: ins, del */

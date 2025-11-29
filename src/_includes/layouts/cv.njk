@@ -20,10 +20,7 @@
           <strong>Name:</strong> {{ config.author.name }}
         </div>
         <div class="cv-info-item">
-          <strong>Email:</strong> <a href="mailto:{{ config.author.email }}">{{ config.author.email }}</a>
-        </div>
-        <div class="cv-info-item">
-          <strong>Website:</strong> <a href="{{ config.domain }}">{{ config.domain }}</a>
+          <strong>Website:</strong> <a href="{{ config.domain }}" target="_blank" rel="noopener noreferrer">{{ config.domain }}</a>
         </div>
       </div>
     </section>
@@ -113,23 +110,49 @@
           <span class="label">Preprints</span>
         </div>
       </div>
-      <p class="cv-pub-link"><a href="/research/">View all publications →</a></p>
+      <p class="cv-pub-link"><a href="/research/">View full publication details with abstracts →</a></p>
 
-      {# Selected Publications #}
-      <h3>Selected Publications</h3>
-      
-      <div class="cv-publications">
+      {# Journal Publications - Concise Numbered List #}
+      <h3>Journal Publications</h3>
+      <ol class="cv-publications-numbered">
         {% for item in collections.publication_id %}
-        <div class="cv-pub-entry">
-          <p class="cv-pub-title">{{ item.data.title }}</p>
-          <p class="cv-pub-authors">{{ item.data.authors }}</p>
-          <p class="cv-pub-venue"><em>{{ item.data.jorunal }}</em>{% if item.data.pub_year %}, {{ item.data.pub_year }}{% endif %}</p>
+        <li class="cv-pub-entry-concise">
+          <span class="cv-pub-title-concise">{{ item.data.title }}</span>
+          <span class="cv-pub-meta">{{ item.data.authors }} • <em>{{ item.data.jorunal }}</em>{% if item.data.pub_year %}, {{ item.data.pub_year }}{% endif %}</span>
           {% if item.data.doi %}
-          <p class="cv-pub-doi"><a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">{{ item.data.doi }}</a></p>
+          <span class="cv-pub-doi-concise"><a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">DOI</a></span>
           {% endif %}
-        </div>
+        </li>
         {% endfor %}
-      </div>
+      </ol>
+
+      {# Conference Papers - Concise Numbered List #}
+      <h3>Conference Papers</h3>
+      <ol class="cv-publications-numbered">
+        {% for item in collections.conf_id %}
+        <li class="cv-pub-entry-concise">
+          <span class="cv-pub-title-concise">{{ item.data.title }}</span>
+          <span class="cv-pub-meta">{{ item.data.authors }} • {{ item.data.event }}</span>
+          {% if item.data.proceedings %}
+          <span class="cv-pub-doi-concise"><a href="{{ item.data.proceedings }}" target="_blank" rel="noopener noreferrer">Link</a></span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+
+      {# Preprints - Concise Numbered List #}
+      <h3>Preprints</h3>
+      <ol class="cv-publications-numbered">
+        {% for item in collections.preprint_id %}
+        <li class="cv-pub-entry-concise">
+          <span class="cv-pub-title-concise">{{ item.data.title }}</span>
+          <span class="cv-pub-meta">{{ item.data.authors }}{% if item.data.pub_year %} • {{ item.data.pub_year }}{% endif %}</span>
+          {% if item.data.preprint_addr %}
+          <span class="cv-pub-doi-concise"><a href="{{ item.data.preprint_addr }}" target="_blank" rel="noopener noreferrer">Link</a></span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ol>
     </section>
 
     {# Research Profiles #}

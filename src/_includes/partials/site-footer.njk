@@ -10,19 +10,11 @@
         <p>University of Calcutta, India</p>
         <p><a href="mailto:{{ config.author.email }}">{{ config.author.email }}</a></p>
       </div>
-      <div class="footer-links">
-        <h3>Research Profiles</h3>
-        <ul>
-          <li><a href="{{ config.social.googleScholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-          <li><a href="{{ config.social.researchGate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
-        </ul>
-      </div>
       <div class="footer-site">
-        <h3>Site</h3>
+        <h3>Site Map</h3>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/research/">Research</a></li>
-          <li><a href="/posters/">Posters</a></li>
+          <li><a href="/research/">Research &amp; Publications</a></li>
           <li><a href="/cv/">CV</a></li>
           <li><a href="/posts/">Blog</a></li>
         </ul>
@@ -30,7 +22,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; {{ helpers.dateNow | dateToYear }} {{ config.author.name }}. All rights reserved.</p>
-      <p>Built with <a href="https://www.11ty.dev/">Eleventy</a></p>
+      <p>Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a></p>
     </div>
   </div>
 </footer>
