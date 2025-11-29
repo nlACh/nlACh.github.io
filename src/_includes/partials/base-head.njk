@@ -3,8 +3,13 @@
 {# Theme initialization - runs before page render to prevent flash #}
 <script>
   (function() {
-    const theme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      // localStorage not available (e.g., private browsing mode)
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
   })();
 </script>
 
