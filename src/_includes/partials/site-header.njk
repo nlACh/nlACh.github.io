@@ -5,13 +5,18 @@
 	<nav class="main-nav" role="navigation" aria-label="Main navigation">
 		<div class="nav-container wrapper">
 			<a href="/" class="nav-brand">{{ config.projectName }}</a>
-			<button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-				<span class="nav-toggle-icon"></span>
-			</button>
+			<div class="nav-right">
+				<button class="theme-toggle-button" aria-label="Toggle dark/light mode" onclick="toggleTheme()">
+					<span class="theme-icon-light">☀️</span>
+					<span class="theme-icon-dark">🌙</span>
+				</button>
+				<button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+					<span class="nav-toggle-icon"></span>
+				</button>
+			</div>
 			<ul class="nav-menu">
 				<li><a href="/" {% if page.url == "/" %}class="nav-active" aria-current="page"{% endif %}>Home</a></li>
 				<li><a href="/research/" {% if "/research" in page.url %}class="nav-active" aria-current="page"{% endif %}>Research</a></li>
-				<li><a href="/posters/" {% if "/posters" in page.url %}class="nav-active" aria-current="page"{% endif %}>Posters</a></li>
 				<li><a href="/cv/" {% if "/cv" in page.url %}class="nav-active" aria-current="page"{% endif %}>CV</a></li>
 				<li><a href="/posts/" {% if "/posts" in page.url %}class="nav-active" aria-current="page"{% endif %}>Blog</a></li>
 			</ul>
@@ -20,6 +25,15 @@
 </header>
 
 <script>
+function toggleTheme() {
+	const html = document.documentElement;
+	const currentTheme = html.getAttribute('data-theme');
+	const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+	
+	html.setAttribute('data-theme', newTheme);
+	localStorage.setItem('theme', newTheme);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 	const navToggle = document.querySelector('.nav-toggle');
 	const navMenu = document.querySelector('.nav-menu');

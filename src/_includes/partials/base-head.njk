@@ -1,5 +1,13 @@
 {# - Head order thanks to https://github.com/rviscomi/capo.js #}
 
+{# Theme initialization - runs before page render to prevent flash #}
+<script>
+  (function() {
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
 {# Page title format #}
 {% set pageTitle = title + ' | ' + config.projectName %}
 {# Remove any title duplication #}

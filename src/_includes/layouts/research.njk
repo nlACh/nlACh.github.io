@@ -12,35 +12,37 @@
     <h2><span class="section-icon">📄</span> Journal Publications</h2>
     <div class="publications-grid">
       {% for item in collections.publication_id %}
-        <article class="publication-card">
-          <div class="pub-content">
+        <article class="publication-card publication-card-horizontal">
+          {% if item.data.image %}
+          <div class="pub-image-side">
+            <img src="/content/pub_type/1-pubs/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="pub-content-side">
             <h3 class="pub-title">{{ item.data.title }}</h3>
             <p class="pub-authors">{{ item.data.authors }}</p>
             <p class="pub-venue">
               <strong>{{ item.data.jorunal }}</strong>
               {% if item.data.pub_year %} ({{ item.data.pub_year }}){% endif %}
             </p>
-            {% if item.data.image %}
-            <div class="pub-image">
-              <img src="/content/pub_type/1-pubs/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+            <div class="pub-actions">
+              {% if item.data.doi %}
+                <a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>View Paper</span>
+                </a>
+              {% endif %}
+              {% if item.data.abstract %}
+                <button class="btn btn-secondary abstract-toggle" data-target="abstract-j{{ loop.index }}">
+                  <span class="toggle-text">Show Abstract</span>
+                </button>
+              {% endif %}
+            </div>
+            {% if item.data.abstract %}
+            <div class="pub-abstract abstract-collapsible" id="abstract-j{{ loop.index }}">
+              <p>{{ item.data.abstract }}</p>
             </div>
             {% endif %}
           </div>
-          <div class="pub-actions">
-            {% if item.data.doi %}
-              <a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                <span>View Paper</span>
-              </a>
-            {% endif %}
-            {% if item.data.abstract %}
-              <button class="btn btn-secondary collapsible" data-target="abstract-j{{ loop.index }}">Abstract</button>
-            {% endif %}
-          </div>
-          {% if item.data.abstract %}
-          <div class="pub-abstract" id="abstract-j{{ loop.index }}" style="display: none;">
-            <p>{{ item.data.abstract }}</p>
-          </div>
-          {% endif %}
         </article>
       {% endfor %}
     </div>
@@ -51,47 +53,49 @@
     <h2><span class="section-icon">🎤</span> Conference Papers</h2>
     <div class="publications-grid">
       {% for item in collections.conf_id %}
-        <article class="publication-card">
-          <div class="pub-content">
+        <article class="publication-card publication-card-horizontal">
+          {% if item.data.image %}
+          <div class="pub-image-side">
+            <img src="/content/pub_type/2-confs/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="pub-content-side">
             <h3 class="pub-title">{{ item.data.title }}</h3>
             <p class="pub-authors">{{ item.data.authors }}</p>
             <p class="pub-venue">{{ item.data.event }}</p>
-            {% if item.data.image %}
-            <div class="pub-image">
-              <img src="/content/pub_type/2-confs/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+            <div class="pub-actions">
+              {% if item.data.proceedings %}
+                <a href="{{ item.data.proceedings }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>Proceedings</span>
+                </a>
+              {% endif %}
+              {% if item.data.presentation_file %}
+                <a href="/content/pub_type/2-confs/{{ item.data.presentation_file }}" download class="btn btn-secondary">
+                  <span>📊 Slides</span>
+                </a>
+              {% endif %}
+              {% if item.data.abstract_file %}
+                <a href="/content/pub_type/2-confs/{{ item.data.abstract_file }}" download class="btn btn-outline">
+                  <span>Abstract</span>
+                </a>
+              {% endif %}
+              {% if item.data.poster_file %}
+                <button class="btn btn-outline pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.poster_file }}">
+                  <span>📌 View Poster</span>
+                </button>
+              {% endif %}
+              {% if item.data.abstract %}
+                <button class="btn btn-secondary abstract-toggle" data-target="abstract-c{{ loop.index }}">
+                  <span class="toggle-text">Show Abstract</span>
+                </button>
+              {% endif %}
+            </div>
+            {% if item.data.abstract %}
+            <div class="pub-abstract abstract-collapsible" id="abstract-c{{ loop.index }}">
+              <p>{{ item.data.abstract }}</p>
             </div>
             {% endif %}
           </div>
-          <div class="pub-actions">
-            {% if item.data.proceedings %}
-              <a href="{{ item.data.proceedings }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                <span>Proceedings</span>
-              </a>
-            {% endif %}
-            {% if item.data.presentation_file %}
-              <a href="/content/pub_type/2-confs/{{ item.data.presentation_file }}" download class="btn btn-secondary">
-                <span>📊 Slides</span>
-              </a>
-            {% endif %}
-            {% if item.data.abstract_file %}
-              <a href="/content/pub_type/2-confs/{{ item.data.abstract_file }}" download class="btn btn-outline">
-                <span>Abstract</span>
-              </a>
-            {% endif %}
-            {% if item.data.poster_file %}
-              <a href="/content/pub_type/2-confs/{{ item.data.poster_file }}" download class="btn btn-outline">
-                <span>📌 Poster</span>
-              </a>
-            {% endif %}
-            {% if item.data.abstract %}
-              <button class="btn btn-secondary collapsible" data-target="abstract-c{{ loop.index }}">Abstract</button>
-            {% endif %}
-          </div>
-          {% if item.data.abstract %}
-          <div class="pub-abstract" id="abstract-c{{ loop.index }}" style="display: none;">
-            <p>{{ item.data.abstract }}</p>
-          </div>
-          {% endif %}
         </article>
       {% endfor %}
     </div>
@@ -102,56 +106,153 @@
     <h2><span class="section-icon">📝</span> Preprints</h2>
     <div class="publications-grid">
       {% for item in collections.preprint_id %}
-        <article class="publication-card">
-          <div class="pub-content">
+        <article class="publication-card publication-card-horizontal">
+          {% if item.data.image %}
+          <div class="pub-image-side">
+            <img src="/content/pub_type/3-preprints/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="pub-content-side">
             <h3 class="pub-title">{{ item.data.title }}</h3>
             <p class="pub-authors">{{ item.data.authors }}</p>
             <p class="pub-venue">Preprint {% if item.data.pub_year %}({{ item.data.pub_year }}){% endif %}</p>
-            {% if item.data.image %}
-            <div class="pub-image">
-              <img src="/content/pub_type/3-preprints/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+            <div class="pub-actions">
+              {% if item.data.preprint_addr %}
+                <a href="{{ item.data.preprint_addr }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>View Preprint</span>
+                </a>
+              {% endif %}
+              {% if item.data.alt_available == "Yes" and item.data.alt_addr %}
+                <a href="{{ item.data.alt_addr }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Alternative Link</span>
+                </a>
+              {% endif %}
+              {% if item.data.abstract %}
+                <button class="btn btn-secondary abstract-toggle" data-target="abstract-p{{ loop.index }}">
+                  <span class="toggle-text">Show Abstract</span>
+                </button>
+              {% endif %}
+            </div>
+            {% if item.data.abstract %}
+            <div class="pub-abstract abstract-collapsible" id="abstract-p{{ loop.index }}">
+              <p>{{ item.data.abstract }}</p>
             </div>
             {% endif %}
           </div>
-          <div class="pub-actions">
-            {% if item.data.preprint_addr %}
-              <a href="{{ item.data.preprint_addr }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                <span>View Preprint</span>
-              </a>
-            {% endif %}
-            {% if item.data.alt_available == "Yes" and item.data.alt_addr %}
-              <a href="{{ item.data.alt_addr }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                <span>Alternative Link</span>
-              </a>
-            {% endif %}
-            {% if item.data.abstract %}
-              <button class="btn btn-secondary collapsible" data-target="abstract-p{{ loop.index }}">Abstract</button>
-            {% endif %}
-          </div>
-          {% if item.data.abstract %}
-          <div class="pub-abstract" id="abstract-p{{ loop.index }}" style="display: none;">
-            <p>{{ item.data.abstract }}</p>
-          </div>
-          {% endif %}
         </article>
       {% endfor %}
     </div>
   </section>
+
+  {# Posters & Presentations - Merged from posters page #}
+  <section class="publications-section" id="posters">
+    <h2><span class="section-icon">📌</span> Posters &amp; Presentations</h2>
+    <div class="publications-grid">
+      <article class="publication-card publication-card-horizontal">
+        <div class="pub-image-side poster-preview-side">
+          <div class="poster-placeholder">
+            <span class="poster-icon">📌</span>
+            <span>Research Poster</span>
+          </div>
+        </div>
+        <div class="pub-content-side">
+          <h3 class="pub-title">Understanding the composition dependent charge qubit performance of a dual-gate Al<sub>x</sub>Ga<sub>1-x</sub>As nanowire FET</h3>
+          <p class="pub-authors">N. Paul, B. Nag Chowdhury, S. Chattopadhyay</p>
+          <p class="pub-venue">22nd International Workshop on the Physics of Semiconductor Devices (IWPSD 2023)</p>
+          <p class="pub-date">December 13-17, 2023</p>
+          <div class="pub-actions">
+            <button class="btn btn-primary pdf-view-btn" data-pdf="/content/pub_type/2-confs/IWPSD2023_NPaul_Poster_V1.pdf">
+              <span>📄 View Poster</span>
+            </button>
+            <a href="/content/pub_type/2-confs/IWPSD2023_NPaul_Poster_V1.pdf" download class="btn btn-secondary">
+              <span>📥 Download Poster</span>
+            </a>
+            <a href="/content/pub_type/2-confs/Abstract_IWPSD23_NPaul.pdf" download class="btn btn-outline">
+              <span>📄 Download Abstract</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 </section>
+
+{# PDF Modal #}
+<div class="pdf-modal" id="pdfModal">
+  <div class="pdf-modal-backdrop"></div>
+  <div class="pdf-modal-content">
+    <button class="pdf-modal-close" aria-label="Close modal">&times;</button>
+    <iframe id="pdfViewer" src="" title="PDF Viewer"></iframe>
+  </div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const collapsibles = document.querySelectorAll('.collapsible');
-  collapsibles.forEach(function(btn) {
+  // Abstract toggle functionality with smooth animation
+  const abstractToggles = document.querySelectorAll('.abstract-toggle');
+  abstractToggles.forEach(function(btn) {
     btn.addEventListener('click', function() {
       const targetId = this.getAttribute('data-target');
       const target = document.getElementById(targetId);
+      const toggleText = this.querySelector('.toggle-text');
+      
       if (target) {
-        const isVisible = target.style.display === 'block';
-        target.style.display = isVisible ? 'none' : 'block';
-        this.classList.toggle('active', !isVisible);
+        const isExpanded = target.classList.contains('abstract-expanded');
+        
+        if (isExpanded) {
+          target.classList.remove('abstract-expanded');
+          this.classList.remove('active');
+          if (toggleText) toggleText.textContent = 'Show Abstract';
+        } else {
+          target.classList.add('abstract-expanded');
+          this.classList.add('active');
+          if (toggleText) toggleText.textContent = 'Hide Abstract';
+        }
       }
     });
+  });
+
+  // PDF Modal functionality
+  const pdfModal = document.getElementById('pdfModal');
+  const pdfViewer = document.getElementById('pdfViewer');
+  const pdfViewBtns = document.querySelectorAll('.pdf-view-btn');
+  const modalBackdrop = document.querySelector('.pdf-modal-backdrop');
+  const modalClose = document.querySelector('.pdf-modal-close');
+
+  function openModal(pdfUrl) {
+    pdfViewer.src = pdfUrl;
+    pdfModal.classList.add('pdf-modal-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    pdfModal.classList.remove('pdf-modal-open');
+    pdfViewer.src = '';
+    document.body.style.overflow = '';
+  }
+
+  pdfViewBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const pdfUrl = this.getAttribute('data-pdf');
+      if (pdfUrl) {
+        openModal(pdfUrl);
+      }
+    });
+  });
+
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', closeModal);
+  }
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+
+  // Close modal on ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && pdfModal.classList.contains('pdf-modal-open')) {
+      closeModal();
+    }
   });
 });
 </script>
