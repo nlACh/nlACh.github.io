@@ -5,8 +5,8 @@ export default {
 	domain:
 		process.env.ELEVENTY_RUN_MODE == "serve" ? "http://localhost:8080" : "https://nlach.github.io",
 	robots: "index, follow",
-	themeColor: "#1a365d",
-	backgroundColor: "#f7fafc",
+	themeColor: "#707070ff",
+	backgroundColor: "#dadadaff",
 	author: {
 		name: "Nilayan Paul",
 		email: "nlpl931@gmail.com",
