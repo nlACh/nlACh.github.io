@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://nlach.github.io/">
   <title>Nilayan Paul</title>
   <id>https://nlach.github.io/</id>
-  <updated>2025-11-30T07:31:57Z</updated>
+  <updated>2025-11-30T09:17:11Z</updated>
   <link rel="self" href="https://nlach.github.io/feed.xml" type="application/atom+xml"/>
   <link rel="alternate" type="text/html" href="https://nlach.github.io/"/>
   <author>
@@ -13,53 +13,5 @@
   </author>
   <icon>https://nlach.github.io/icon-512.jpg</icon>
 
-  
-  
-    <entry>
-      <title>Journal Publications</title>
-      
-      <id>https://nlach.github.io/content/pub_type/1-pubs/</id>
-      <link rel="alternate" type="text/html" href="https://nlach.github.io/content/pub_type/1-pubs/"/>
-      <published>2025-11-30T07:31:57Z</published>
-      <updated>2025-11-30T07:31:57Z </updated>
-      
-        
-          <category>mypubs</category>
-        
-      
-      <content xml:lang="en" type="html"></content>
-    </entry>
-  
-  
-    <entry>
-      <title>Conferences</title>
-      
-      <id>https://nlach.github.io/content/pub_type/2-confs/</id>
-      <link rel="alternate" type="text/html" href="https://nlach.github.io/content/pub_type/2-confs/"/>
-      <published>2025-11-30T07:31:57Z</published>
-      <updated>2025-11-30T07:31:57Z </updated>
-      
-        
-          <category>mypubs</category>
-        
-      
-      <content xml:lang="en" type="html"></content>
-    </entry>
-  
-  
-    <entry>
-      <title>Preprints</title>
-      
-      <id>https://nlach.github.io/content/pub_type/3-preprints/</id>
-      <link rel="alternate" type="text/html" href="https://nlach.github.io/content/pub_type/3-preprints/"/>
-      <published>2025-11-30T07:31:57Z</published>
-      <updated>2025-11-30T07:31:57Z </updated>
-      
-        
-          <category>mypubs</category>
-        
-      
-      <content xml:lang="en" type="html"></content>
-    </entry>
   
 </feed>
