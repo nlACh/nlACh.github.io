@@ -9,22 +9,27 @@
 
   {# Journal Publications #}
   <section class="publications-section" id="journals">
-    <h2> Journal Publications</h2>
+    <h2 class="page-header-section"> Journal Publications</h2>
     <div class="publications-grid">
       {% for item in collections.publication_id %}
         <article class="publication-card publication-card-horizontal">
           {% if item.data.image %}
           <div class="pub-image-side">
-            <img src="/content/pub_type/1-pubs/{{ item.data.image }}" alt="Publication figure" loading="lazy">
+            <img src="/content/pub_type/1-pubs/{{ item.data.image }}" alt="Graphical abstract" loading="lazy">
           </div>
           {% endif %}
           <div class="pub-content-side">
             <h3 class="pub-title">{{ item.data.title }}</h3>
             <p class="pub-authors">{{ item.data.authors }}</p>
             <p class="pub-venue">
-              <strong>{{ item.data.jorunal }}</strong>
-              {% if item.data.pub_year %} ({{ item.data.pub_year }}){% endif %}
+              <strong>{{ item.data.jorunal }}
+              {% if item.data.pub_year %} ({{ item.data.pub_year }}){% endif %}</strong>
             </p>
+            {% if item.data.doi %}
+            <p class="pub-venue">
+              <strong>DOI: {{ item.data.doi }}</strong>  
+            </p>
+            {% endif %}
             <div class="pub-actions">
               {% if item.data.doi %}
                 <a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
@@ -62,7 +67,10 @@
           <div class="pub-content-side">
             <h3 class="pub-title">{{ item.data.title }}</h3>
             <p class="pub-authors">{{ item.data.authors }}</p>
-            <p class="pub-venue">{{ item.data.event }}</p>
+            <p class="pub-venue"><strong>{{ item.data.event }}</strong></p>
+            {% if item.data.doi %}
+            <p class="pub-venue"><strong>DOI: {{ item.data.doi }}</strong></p>
+            {% endif %}
             <div class="pub-actions">
               {% if item.data.proceedings %}
                 <a href="{{ item.data.proceedings }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
