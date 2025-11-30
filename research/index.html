@@ -94,7 +94,7 @@
 </h3>
 </header>
 <section class="publications-section" id="journals">
-<h2 class="page-header-section">Journal Publications</h2>
+<h2>Journal Publications</h2>
 <div class="publications-grid">
 <article class="publication-card publication-card-horizontal">
 <div class="pub-content-side">
@@ -107,9 +107,6 @@
 <button class="btn btn-primary abstract-toggle" data-target="abstract-j1">
 <span class="toggle-text">Show Abstract</span>
 </button>
-</div>
-<div class="pub-abstract abstract-collapsible" id="abstract-j1">
-We show the effect of Ga-doping on the electrical and optical properties of thermally evaporated ZnO films.
 </div>
 </div>
 </article>
@@ -132,9 +129,6 @@ We show the effect of Ga-doping on the electrical and optical properties of ther
 <span class="toggle-text">Show Abstract</span>
 </button>
 </div>
-<div class="pub-abstract abstract-collapsible" id="abstract-j2">
-The article deals with the modeling of gate voltage controlled resonant tunneling transport in a complementary-metal–oxide–semiconductor (CMOS) compatible double quantum dot channel nanowire field-effect-transistor (FET). Appropriate applied voltages at two separate gates, gate-1 and gate-2 of the device form two voltage-tunable quantum dots underneath the gates, within the nanowire channel. The quantum dot eigenstates are tuned by varying the applied gate voltages to enable voltage-modulated resonant tunneling transport. Such transport is modeled by employing a Schrödinger-Poisson self-consistent framework using non-equilibrium Green’s function (NEGF) formalism. Electron–phonon scattering within the nanowire channel is also considered. The transfer characteristics exhibit multiple current thresholds in the range of 10^(−4) uA/um – 1 uA/um due to resonant tunneling. The phonon scattering is observed to significantly depend on nanowire geometry and applied gate voltages, with tunneling dominated quasi-ballistic transport occurring at higher gate voltages. Also, steep sub-threshold slopes of 30 mV/decade–8 mV/decade range and transconductance in the range of 10^(−7) uS/um – 1 uS/um at room temperature are obtained by varying the nanowire diameter in the range of 20 nm – 5 nm. Therefore, such device architecture exhibits significant potential for achieving multi-current thresholds in a CMOS compatible architecture at room temperature.
-</div>
 </div>
 </article>
 <article class="publication-card publication-card-horizontal">
@@ -155,9 +149,6 @@ The article deals with the modeling of gate voltage controlled resonant tunnelin
 <button class="btn btn-primary abstract-toggle" data-target="abstract-j3">
 <span class="toggle-text">Show Abstract</span>
 </button>
-</div>
-<div class="pub-abstract abstract-collapsible" id="abstract-j3">
-This work investigates the material-dependent charge qubit performance of a gate voltage-induced double-quantum-dot gate nanowire channel field-effect transistor (DQD-NWFET) device through charge stability, Bloch sphere coverage, anti-crossing energy, and dephasing time. In this device, voltages at two localized gates along the nanowire channel create two quantum dots in series, which are further tuned by these voltages for the relevant qubit operations. To understand the material-dependent performance of the device, a self-consistent Schrodinger-Poisson framework coupled to non-equilibrium Green’s function formalism is developed. The study indicates that the charge qubit performance of the device significantly depends on the transport effective mass, with slight dependence on nanowire permittivity. It is observed that the increase in transport effective mass leads to sharpening of the “hyperbolic” nature of the charge stability diagram, along with a significant reduction in anti-crossing energy and Bloch sphere coverage. Consequently, anti-crossing energy in the range of 3–25 meV and dephasing time in the range of 25–130 ns can be achieved by varying the transport effective mass and nanowire permittivity from 0.04 to 0.10 and 10–16, respectively. The performance of the device is further studied for specific nanowire materials by taking into account the appropriate material parameters. Therefore, this study enables material engineering of nanowire FET devices for realizing superior charge qubit performance.
 </div>
 </div>
 </article>
@@ -245,9 +236,6 @@ View Presentation
 <span class="toggle-text">Show Abstract</span>
 </button>
 </div>
-<div class="pub-abstract abstract-collapsible" id="abstract-c4">
-<p>In this work, a Si/SiO2/Ge/SiO2/Pt resonant tunneling device (RTD) with an asymmetric double barrier has been modeled by adopting NEGF formalism. The impact of Ge-quantum well widths below, equal and above its ex-citonic Bohr radius (EBR ~25 nm) on resonant tunneling current is investigated at room temperature. The tunneling current peaks are observed to appear for decreasing the well width to equal or less than the EBR of Ge. Such peak values increase with downscaling of the well width up to a certain value and then it decreases with further miniaturization. The maximum peak current is obtained to be ~13 mA/cm^2 for Ge-well width of 17 nm. The corresponding maximum peak-to-valley current ratio (PVCR) is estimated to be ~18 at room temperature, which is larger in order than the conventional RTDs. Therefore, the current work may provide the route for fabrication of Si/Ge based high performance resonant tunneling devices operational at room temperature.</p>
-</div>
 </div>
 </article>
 </div>
@@ -289,7 +277,19 @@ View Presentation
 <iframe id="pdfViewer" src="" title="PDF Viewer"></iframe>
 </div>
 </div>
-<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".abstract-toggle").forEach(function(t){t.addEventListener("click",function(){var t=this.getAttribute("data-target"),t=document.getElementById(t),e=this.querySelector(".toggle-text");t&&(t.classList.contains("abstract-expanded")?(t.classList.remove("abstract-expanded"),this.classList.remove("active"),e&&(e.textContent="Show Abstract")):(t.classList.add("abstract-expanded"),this.classList.add("active"),e&&(e.textContent="Hide Abstract")))})});const e=document.getElementById("pdfModal"),d=document.getElementById("pdfViewer");var t=document.querySelectorAll(".pdf-view-btn"),n=document.querySelector(".pdf-modal-backdrop"),c=document.querySelector(".pdf-modal-close");function o(){e.classList.remove("pdf-modal-open"),d.src="",document.body.style.overflow=""}t.forEach(function(t){t.addEventListener("click",function(){var t=this.getAttribute("data-pdf");t&&(t=t,d.src=t,e.classList.add("pdf-modal-open"),document.body.style.overflow="hidden")})}),n&&n.addEventListener("click",o),c&&c.addEventListener("click",o),document.addEventListener("keydown",function(t){"Escape"===t.key&&e.classList.contains("pdf-modal-open")&&o()})})</script>
+<div class="abstract-modal" id="abstractModal" role="dialog" aria-modal="true" aria-labelledby="abstractModalTitle">
+
+<div class="abstract-modal-content">
+<div class="abstract-modal-header">
+<h3 class="abstract-modal-title" id="abstractModalTitle">Abstract</h3>
+<button class="abstract-modal-close" aria-label="Close abstract dialog">&times;</button>
+</div>
+<div class="abstract-modal-body">
+<p id="abstractModalText">&nbsp;</p>
+</div>
+</div>
+</div>
+<script>document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("pdfModal"),o=document.getElementById("pdfViewer");var t=document.querySelectorAll(".pdf-view-btn"),d=e.querySelector(".pdf-modal-backdrop"),n=e.querySelector(".pdf-modal-close");function a(){e.classList.remove("pdf-modal-open"),o.src="",document.body.style.overflow=""}t.forEach(function(t){t.addEventListener("click",function(){var t=this.getAttribute("data-pdf");t&&(t=t,o.src=t,e.classList.add("pdf-modal-open"),document.body.style.overflow="hidden")})}),d&&d.addEventListener("click",a),n&&n.addEventListener("click",a);const c=document.getElementById("abstractModal"),l=document.getElementById("abstractModalTitle"),s=document.getElementById("abstractModalText");t=document.querySelectorAll(".abstract-modal-btn"),d=c.querySelector(".abstract-modal-backdrop");const r=c.querySelector(".abstract-modal-close");function i(){c.classList.remove("abstract-modal-open"),document.body.style.overflow=""}t.forEach(function(t){t.addEventListener("click",function(){var t,e=this.getAttribute("data-title"),o=this.getAttribute("data-abstract");e&&o&&(e=e,o=o,(t=document.createElement("textarea")).innerHTML=o,o=t.value,l.textContent=e,s.textContent=o,c.classList.add("abstract-modal-open"),document.body.style.overflow="hidden",r.focus())})}),d&&d.addEventListener("click",i),r&&r.addEventListener("click",i),document.addEventListener("keydown",function(t){"Escape"===t.key&&(e.classList.contains("pdf-modal-open")&&a(),c.classList.contains("abstract-modal-open"))&&i()})})</script>
 </main>
 <footer class="site-footer" role="contentinfo">
 <div class="wrapper footer-content">
@@ -303,7 +303,7 @@ View Presentation
 <li><a href="/posts/">Blog</a></li>
 </ul>
 </div>
-<p class="footer-bottom">&copy; 2025 Nilayan Paul. Site built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a>. Last updated on 30th November 2025 at 12:14</p>
+<p class="footer-bottom">&copy; 2025 Nilayan Paul. Site built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a>. Last updated on 30th November 2025 at 13:11</p>
 </div>
 </div>
 </footer>
