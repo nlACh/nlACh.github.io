@@ -17,6 +17,7 @@
 
 [data-theme="dark"] .page-header-section h1 {
 	color: var(--color-primary-light);
+	margin-bottom: var(--space-s);
 }
 
 .page-intro {
@@ -32,11 +33,24 @@
 }
 
 .publications-section h2 {
-	color: var(--color-primary);
+	color: var(--color-primary-dark);
 	font-size: var(--step-2);
 	margin-bottom: var(--space-l);
 	padding-bottom: var(--space-xs);
 	border-bottom: 3px solid var(--color-primary-light);
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	gap: var(--space-xs);
+}
+
+[data-theme="dark"] .publications-section h2 {
+	color: var(--color-text-secondary);
+	font-size: var(--step-2);
+	margin-bottom: var(--space-l);
+	padding-bottom: var(--space-xs);
+	border-bottom: 3px solid var(--color-primary-light);
+	width: fit-content;
 	display: flex;
 	align-items: center;
 	justify-content: center; /* Center-align headings */
@@ -61,7 +75,7 @@
 /* Publication Card */
 .publication-card {
 	background: var(--color-surface-card);
-	border-radius: var(--border-radius-medium);
+	/*border-radius: var(--border-radius-small);*/
 	padding: var(--space-m);
 	box-shadow: var(--shadow-md);
 	border: 1px solid var(--color-border-default);
@@ -89,8 +103,7 @@
 .pub-image-side img {
 	width: 100%;
 	height: auto;
-	border-radius: var(--border-radius-small);
-	border: 1px solid var(--color-border-default);
+	border: 2px solid var(--color-border-default);
 	object-fit: contain;
 }
 
@@ -138,7 +151,7 @@
 }
 
 [data-theme="dark"] .pub-title {
-	color: var(--color-primary-light);
+	color: var(--color-text-default);
 }
 
 .pub-authors {
@@ -148,13 +161,13 @@
 }
 
 .pub-venue {
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 	font-size: 0.85rem;
 	margin: 0 0 var(--space-xs) 0;
 }
 
 .pub-date {
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 	font-size: 0.85rem;
 	margin: 0 0 var(--space-xs) 0;
 	font-style: italic;
@@ -182,8 +195,16 @@
 	margin-top: var(--space-s);
 	padding: var(--space-s);
 	background: var(--color-surface-secondary);
-	border-radius: var(--border-radius-small);
 	border-left: 4px solid var(--color-primary);
+	color: var(--color-text-default);
+}
+
+[data-theme="dark"] .pub-abstract {
+	margin-top: var(--space-s);
+	padding: var(--space-s);
+	background: var(--color-primary-dark);
+	border-left: 4px solid var(--color-primary-light);
+	color: var(--color-text-default);
 }
 
 .abstract-collapsible {
@@ -196,17 +217,17 @@
 }
 
 .abstract-collapsible.abstract-expanded {
-	max-height: 500px;
+	max-height: 250px;
 	opacity: 1;
 	padding: var(--space-s);
 	margin-top: var(--space-s);
+	overflow-y: auto;
 }
 
 .pub-abstract p {
 	margin: 0;
 	font-size: 0.9rem;
 	line-height: var(--leading-loose);
-	color: var(--color-text-secondary);
 }
 
 /* PDF Modal Styles */
@@ -471,65 +492,25 @@
 
 /* Primary Button - High emphasis, main actions */
 .btn-primary {
-	background-color: var(--color-btn-primary-bg);
-	color: var(--color-btn-primary-text);
-	border-color: var(--color-btn-primary-border);
+	background: var(--color-surface-secondary);
+	color: var(--color-primary-dark);
+	border-color: var(--color-primary);
 }
 
-.btn-primary:hover {
-	background-color: var(--color-btn-primary-hover-bg);
-	color: var(--color-btn-primary-hover-text);
-	border-color: var(--color-btn-primary-hover-border);
+[data-theme="dark"] .btn-primary {
+	background: var(--color-surface-secondary);
+	color: var(--color-text-secondary);
+	border-color: var(--color-text-secondary);
 }
 
 .btn-primary:active {
 	background-color: var(--color-btn-primary-active-bg);
 }
 
-.btn-primary:focus,
-.btn-primary:focus-visible {
-	outline: 2px solid var(--color-btn-primary-focus-ring);
-	outline-offset: 2px;
-}
-
-/* Secondary Button - Medium emphasis, secondary actions */
-.btn-secondary {
-	background-color: var(--color-btn-secondary-bg);
-	color: var(--color-btn-secondary-text);
-	border-color: var(--color-btn-secondary-border);
-}
-
-.btn-secondary:hover {
-	background-color: var(--color-btn-secondary-hover-bg);
-	color: var(--color-btn-secondary-hover-text);
-	border-color: var(--color-btn-secondary-hover-border);
-}
-
-.btn-secondary:active {
-	background-color: var(--color-btn-secondary-active-bg);
-}
-
-.btn-secondary:focus,
-.btn-secondary:focus-visible {
-	outline: 2px solid var(--color-btn-secondary-focus-ring);
-	outline-offset: 2px;
-}
-
-/* Outline Button - Low emphasis, tertiary actions */
-.btn-outline {
-	background-color: var(--color-btn-outline-bg);
-	color: var(--color-btn-outline-text);
-	border-color: var(--color-btn-outline-border);
-}
-
-.btn-outline:hover {
-	background-color: var(--color-btn-outline-hover-bg);
-	color: var(--color-btn-outline-hover-text);
-	border-color: var(--color-btn-outline-hover-border);
-}
-
-.btn-outline:active {
-	background-color: var(--color-btn-outline-active-bg);
+[data-theme="dark"] .btn-primary:hover {
+	background: var(--color-primary-light);
+	border-color: var(--color-primary-dark);
+	color: white;
 }
 
 .btn-outline:focus,
@@ -549,6 +530,11 @@
 	background-color: var(--color-btn-primary-bg);
 	color: var(--color-btn-primary-text);
 	border-color: var(--color-btn-primary-border);
+}
+
+[data-theme="dark"] .btn.active {
+	background: var(--color-primary-light);
+	color: white;
 }
 
 /* Posters Gallery */
