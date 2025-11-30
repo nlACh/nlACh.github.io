@@ -9,7 +9,7 @@
 
   {# Journal Publications #}
   <section class="publications-section" id="journals">
-    <h2> Journal Publications</h2>
+    <h2 class="page-intro"> Journal Publications</h2>
     <div class="publications-grid">
       {% for item in collections.publication_id %}
         <article class="publication-card publication-card-horizontal">
@@ -40,6 +40,11 @@
                 </button>
               {% endif %}
             </div>
+            {% if item.data.abstract %}
+              <div class="pub-abstract abstract-collapsible" id="abstract-j{{ loop.index }}">
+                <p>{{ item.data.abstract }}</p>
+              </div>
+            {% endif %}
           </div>
         </article>
       {% endfor %}
@@ -48,7 +53,7 @@
 
   {# Conference Papers #}
   <section class="publications-section" id="conferences">
-    <h2>Conference Papers</h2>
+    <h2 class="page-intro">Conference Papers</h2>
     <div class="publications-grid">
       {% for item in collections.conf_id %}
         <article class="publication-card publication-card-horizontal">
@@ -103,6 +108,11 @@
                 </button>
               {% endif %}
             </div>
+            {% if item.data.abstract %}
+              <div class="pub-abstract abstract-collapsible" id="abstract-c{{ loop.index }}">
+                <p>{{ item.data.abstract }}</p>
+              </div>
+            {% endif %}
           </div>
         </article>
       {% endfor %}
@@ -111,7 +121,7 @@
 
   {# Preprints #}
   <section class="publications-section" id="preprints">
-    <h2>Preprints</h2>
+    <h2 class="page-intro">Preprints</h2>
     <div class="publications-grid">
       {% for item in collections.preprint_id %}
         <article class="publication-card publication-card-horizontal">
@@ -151,39 +161,6 @@
       {% endfor %}
     </div>
   </section>
-  <!--
-  {# Posters & Presentations - Merged from posters page #}
-  <section class="publications-section" id="posters">
-    <h2><span class="section-icon">📌</span> Posters &amp; Presentations</h2>
-    <div class="publications-grid">
-      <article class="publication-card publication-card-horizontal">
-        <div class="pub-image-side poster-preview-side">
-          <div class="poster-placeholder">
-            <span class="poster-icon">📌</span>
-            <span>Research Poster</span>
-          </div>
-        </div>
-        <div class="pub-content-side">
-          <h3 class="pub-title">Understanding the composition dependent charge qubit performance of a dual-gate Al<sub>x</sub>Ga<sub>1-x</sub>As nanowire FET</h3>
-          <p class="pub-authors">N. Paul, B. Nag Chowdhury, S. Chattopadhyay</p>
-          <p class="pub-venue">22nd International Workshop on the Physics of Semiconductor Devices (IWPSD 2023)</p>
-          <p class="pub-date">December 13-17, 2023</p>
-          <div class="pub-actions">
-            <button class="btn btn-primary pdf-view-btn" data-pdf="/content/pub_type/2-confs/IWPSD2023_NPaul_Poster_V1.pdf">
-              <span>📄 View Poster</span>
-            </button>
-            <a href="/content/pub_type/2-confs/IWPSD2023_NPaul_Poster_V1.pdf" download class="btn btn-secondary">
-              <span>📥 Download Poster</span>
-            </a>
-            <a href="/content/pub_type/2-confs/Abstract_IWPSD23_NPaul.pdf" download class="btn btn-outline">
-              <span>📄 Download Abstract</span>
-            </a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-  -->
 </section>
 
 {# PDF Modal #}
@@ -195,22 +172,32 @@
   </div>
 </div>
 
-{# Abstract Modal Dialog #}
-<div class="abstract-modal" id="abstractModal" role="dialog" aria-modal="true" aria-labelledby="abstractModalTitle">
-  <div class="abstract-modal-backdrop"></div>
-  <div class="abstract-modal-content">
-    <div class="abstract-modal-header">
-      <h3 class="abstract-modal-title" id="abstractModalTitle">Abstract</h3>
-      <button class="abstract-modal-close" aria-label="Close abstract dialog">&times;</button>
-    </div>
-    <div class="abstract-modal-body">
-      <p id="abstractModalText">&nbsp;</p>
-    </div>
-  </div>
-</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  const abstractToggles = document.querySelectorAll('.abstract-toggle');
+  abstractToggles.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const targetId = this.getAttribute('data-target');
+      const target = document.getElementById(targetId);
+      const toggleText = this.querySelector('.toggle-text');
+      
+      if (target) {
+        const isExpanded = target.classList.contains('abstract-expanded');
+        
+        if (isExpanded) {
+          target.classList.remove('abstract-expanded');
+          this.classList.remove('active');
+          if (toggleText) toggleText.textContent = 'Show Abstract';
+        } else {
+          target.classList.add('abstract-expanded');
+          this.classList.add('active');
+          if (toggleText) toggleText.textContent = 'Hide Abstract';
+        }
+      }
+    });
+  });
+
   // PDF Modal functionality
   const pdfModal = document.getElementById('pdfModal');
   const pdfViewer = document.getElementById('pdfViewer');

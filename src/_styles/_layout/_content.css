@@ -165,6 +165,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-m);
+	width: fit-parent;
 }
 
 .sidebar-card {
@@ -173,6 +174,7 @@
 	padding: var(--space-m);
 	box-shadow: var(--shadow-md);
 	border: 1px solid var(--color-border-default);
+	width: max-content;
 }
 
 .sidebar-card h3 {

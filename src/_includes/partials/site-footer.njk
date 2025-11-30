@@ -5,14 +5,12 @@
         <h3>Site Map</h3>
         <ul class="footer-horizontal-list">
           <li><a href="/">Home</a></li>
-          <li><a href="/research/">Research &amp; Publications</a></li>
+          <li><a href="/research/">Publications</a></li>
           <li><a href="/cv/">CV</a></li>
           <li><a href="/posts/">Blog</a></li>
         </ul>
-        
       </div>
-    
-      <p class="footer-bottom">&copy; {{ helpers.dateNow | dateToYear }} {{ config.author.name }}. Site built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a>. Last updated on {{ helpers.dateNow | dateToDMY }} at {{ helpers.dateNow | dateToTime }}</p>
+      <p class="footer-bottom">&copy; {{ helpers.dateNow | dateToYear }} {{ config.author.name }}. Site built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a>.<br/> Last updated on {{ helpers.dateNow | dateToDMY }} at {{ helpers.dateNow | dateToTime }}</p>
     </div>
   </div>
 </footer>
