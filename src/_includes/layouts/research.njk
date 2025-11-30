@@ -39,7 +39,7 @@
             </div>
             {% if item.data.abstract %}
             <div class="pub-abstract abstract-collapsible" id="abstract-j{{ loop.index }}">
-              <p>{{ item.data.abstract }}</p>
+              {{ item.data.abstract }}
             </div>
             {% endif %}
           </div>
@@ -70,18 +70,28 @@
                 </a>
               {% endif %}
               {% if item.data.presentation_file %}
+                <!--
                 <a href="/content/pub_type/2-confs/{{ item.data.presentation_file }}" download class="btn btn-secondary">
-                  <span>📊 Slides</span>
+                  Slides
                 </a>
+                -->
+                <button class="btn btn-outline pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.presentation_file }}">
+                  View Presentation
+                </button>
               {% endif %}
               {% if item.data.abstract_file %}
+                <!--
                 <a href="/content/pub_type/2-confs/{{ item.data.abstract_file }}" download class="btn btn-outline">
                   <span>Abstract</span>
                 </a>
+                -->
+                <button class="btn btn-outline pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.abstract_file }}">
+                  View Abstract
+                </button>
               {% endif %}
               {% if item.data.poster_file %}
                 <button class="btn btn-outline pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.poster_file }}">
-                  <span>📌 View Poster</span>
+                  View Poster
                 </button>
               {% endif %}
               {% if item.data.abstract %}
