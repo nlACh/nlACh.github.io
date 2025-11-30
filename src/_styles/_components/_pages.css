@@ -288,7 +288,19 @@
 	border-color: var(--color-primary);
 }
 
+[data-theme="dark"].btn-primary {
+	background: var(--color-primary-light);
+	color: blue;
+	border-color: var(--color-primary-dark);
+}
+
 .btn-primary:hover {
+	background: var(--color-primary-dark);
+	border-color: var(--color-primary-dark);
+	color: white;
+}
+
+[data-theme="dark"].btn-primary:hover {
 	background: var(--color-primary-dark);
 	border-color: var(--color-primary-dark);
 	color: white;

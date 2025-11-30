@@ -1,5 +1,5 @@
 ---
-layout: "partials/preprint_id"
+
 title: "Design aspects of dual gate GaAs nanowire FET for room temperature charge qubit operation: A study on diameter and gate engineering"
 image: "qubit_geometrical_paper.png"
 authors: "N. Paul, B. Nag Chowdhury, S. Chattopadhyay"

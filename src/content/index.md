@@ -4,9 +4,9 @@ permalink: "/index.html"
 ---
 
 
-I work as a _Senior Research Fellow_ in the __Quantum Scale Materials and Digital Microfluidics Research Group (QMat&DigiMF)__ led by Professor [Sanatan Chattopadhyay](https://www.researchgate.net/profile/Sanatan-Chattopadhyay) at the [Department of Electronic Science](https://www.caluniv.ac.in/academic/ElcSc.html), [University of Calcutta](https://www.caluniv.ac.in/), India.
+I work as a _Senior Research Fellow_ in the __Quantum Scale Materials and Digital Microfluidics Research Group (QMat&DigiMF)__ led by Professor [Sanatan Chattopadhyay](https://www.researchgate.net/profile/Sanatan-Chattopadhyay) at the Department of Electronic Science, University of Calcutta, India.
 
-My research work involves modeling of quantum transport in nanoscale electronic devices for quantum computing and advanced "beyond Moore" devices, by using gate voltage assisted/tunable quantum dots ([VAQDs/VTQDs](https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.15.054060)) in the channel of quantum-scale field effect transistor devices (FETs).
+My research work involves modeling of quantum transport in nanoscale electronic devices for quantum computing and advanced "beyond Moore" devices, by using gate voltage assisted/tunable quantum dots VAQDs/VTQDs in the channel of quantum-scale field effect transistor devices (FETs).
 
 I have expertise in Non-Equilibrium Green's Function techniques and its application in modeling of nanoscale field effect transistors (finFETs and nanowire FETs), quantum dots and other quantum scale devices. I also have experience in semiconductor device fabrication and characterization, particularly, electron beam lithography.
 

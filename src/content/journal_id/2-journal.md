@@ -1,5 +1,5 @@
 ---
-layout: "partials/pub_id"
+
 title: "Design and modeling of resonant tunneling transport-controlled voltage-induced double quantum dot channel nanowire field-effect-transistor (DQD-FET) for multi-threshold current levels"
 image: "GA_DGMRTFET.png"
 authors: "N. Paul, S. Chattopadhyay"
