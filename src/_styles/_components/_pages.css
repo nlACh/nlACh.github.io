@@ -15,6 +15,10 @@
 	margin-bottom: var(--space-s);
 }
 
+[data-theme="dark"] .page-header-section h1 {
+	color: var(--color-primary-light);
+}
+
 .page-intro {
 	font-size: var(--step-1);
 	color: var(--color-text-secondary);
@@ -22,7 +26,7 @@
 	margin: 0 auto;
 }
 
-/* Publications Section */
+/* Publications Section - Center-aligned headings */
 .publications-section {
 	margin-bottom: var(--space-2xl);
 }
@@ -35,7 +39,13 @@
 	border-bottom: 3px solid var(--color-primary-light);
 	display: flex;
 	align-items: center;
+	justify-content: center; /* Center-align headings */
 	gap: var(--space-xs);
+	text-align: center;
+}
+
+[data-theme="dark"] .publications-section h2 {
+	color: var(--color-primary-light);
 }
 
 .section-icon {
@@ -207,7 +217,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 10000;
+	z-index: var(--z-index-modal);
 }
 
 .pdf-modal.pdf-modal-open {
@@ -252,7 +262,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 10001;
+	z-index: var(--z-index-modal-close);
 	transition: background-color 0.2s ease;
 }
 
@@ -266,10 +276,186 @@
 	border: none;
 }
 
-/* Buttons */
+/* =======================================================================
+ * ABSTRACT DIALOG/MODAL STYLES
+ * =======================================================================
+ * Modal dialog for displaying research paper abstracts.
+ * Supports both light and dark modes with smooth animations.
+ * Accessible with keyboard navigation (ESC to close).
+ */
+.abstract-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: var(--z-index-modal);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.abstract-modal.abstract-modal-open {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 1;
+}
+
+.abstract-modal-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	cursor: pointer;
+	backdrop-filter: blur(4px);
+}
+
+[data-theme="dark"] .abstract-modal-backdrop {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.abstract-modal-content {
+	position: relative;
+	width: 90%;
+	max-width: 700px;
+	max-height: 80vh;
+	background-color: var(--color-surface-default);
+	border-radius: var(--border-radius-large);
+	overflow: hidden;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	transform: scale(0.9);
+	transition: transform 0.3s ease;
+	z-index: var(--z-index-modal-close);
+}
+
+.abstract-modal.abstract-modal-open .abstract-modal-content {
+	transform: scale(1);
+}
+
+.abstract-modal-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--space-m);
+	padding: var(--space-m);
+	background-color: var(--color-primary);
+	color: white;
+}
+
+[data-theme="dark"] .abstract-modal-header {
+	background-color: var(--color-surface-secondary);
+}
+
+.abstract-modal-title {
+	font-size: var(--step-1);
+	font-weight: 600;
+	line-height: var(--leading-default);
+	margin: 0;
+	color: white;
+}
+
+[data-theme="dark"] .abstract-modal-title {
+	color: var(--color-text-default);
+}
+
+.abstract-modal-close {
+	flex-shrink: 0;
+	width: 36px;
+	height: 36px;
+	background: rgba(255, 255, 255, 0.2);
+	color: white;
+	border: none;
+	border-radius: 50%;
+	font-size: 20px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .abstract-modal-close {
+	background: var(--color-primary);
+	color: white;
+}
+
+.abstract-modal-close:hover {
+	background: rgba(255, 255, 255, 0.3);
+	transform: scale(1.1);
+}
+
+[data-theme="dark"] .abstract-modal-close:hover {
+	background: var(--color-primary-light);
+}
+
+.abstract-modal-close:focus,
+.abstract-modal-close:focus-visible {
+	outline: 2px solid var(--color-interactive-focus-ring);
+	outline-offset: 2px;
+}
+
+.abstract-modal-body {
+	padding: var(--space-m);
+	max-height: calc(80vh - 100px);
+	overflow-y: auto;
+}
+
+.abstract-modal-body p {
+	font-size: var(--step-0);
+	line-height: var(--leading-loose);
+	color: var(--color-text-default);
+	margin: 0;
+	text-align: left; /* Left alignment for better accessibility and readability */
+}
+
+/* Responsive adjustments for abstract modal */
+@media (max-width: 768px) {
+	.abstract-modal-content {
+		width: 95%;
+		max-height: 90vh;
+	}
+	
+	.abstract-modal-header {
+		padding: var(--space-s);
+	}
+	
+	.abstract-modal-title {
+		font-size: var(--step-0);
+	}
+	
+	.abstract-modal-body {
+		padding: var(--space-s);
+		max-height: calc(90vh - 80px);
+	}
+}
+
+/* =======================================================================
+ * BUTTON STYLES
+ * =======================================================================
+ * Consistent button styling across the website using CSS variables.
+ * Buttons automatically adapt to light/dark mode through variables.
+ * 
+ * Available button classes:
+ * - .btn: Base button styles (required)
+ * - .btn-primary: High emphasis, filled button
+ * - .btn-secondary: Medium emphasis, subtle background
+ * - .btn-outline: Low emphasis, transparent with border
+ * - .btn-large: Larger padding for prominent CTAs
+ * - .btn.active: Active/selected state
+ * 
+ * All buttons include:
+ * - Hover states with smooth transitions
+ * - Focus states with visible focus rings (accessibility)
+ * - Active states for click feedback
+ * - Support for both <button> and <a> elements
+ */
 .btn {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	gap: var(--space-2xs);
 	padding: var(--space-2xs) var(--space-s);
 	font-family: var(--font-family-sans);
@@ -280,63 +466,89 @@
 	border: 2px solid transparent;
 	cursor: pointer;
 	transition: all 0.2s ease;
+	line-height: 1.4;
 }
 
+/* Primary Button - High emphasis, main actions */
 .btn-primary {
-	background: var(--color-primary);
-	color: white;
-	border-color: var(--color-primary);
-}
-
-[data-theme="dark"].btn-primary {
-	background: var(--color-primary-light);
-	color: blue;
-	border-color: var(--color-primary-dark);
+	background-color: var(--color-btn-primary-bg);
+	color: var(--color-btn-primary-text);
+	border-color: var(--color-btn-primary-border);
 }
 
 .btn-primary:hover {
-	background: var(--color-primary-dark);
-	border-color: var(--color-primary-dark);
-	color: white;
+	background-color: var(--color-btn-primary-hover-bg);
+	color: var(--color-btn-primary-hover-text);
+	border-color: var(--color-btn-primary-hover-border);
 }
 
-[data-theme="dark"].btn-primary:hover {
-	background: var(--color-primary-dark);
-	border-color: var(--color-primary-dark);
-	color: white;
+.btn-primary:active {
+	background-color: var(--color-btn-primary-active-bg);
 }
 
+.btn-primary:focus,
+.btn-primary:focus-visible {
+	outline: 2px solid var(--color-btn-primary-focus-ring);
+	outline-offset: 2px;
+}
+
+/* Secondary Button - Medium emphasis, secondary actions */
 .btn-secondary {
-	background: var(--color-surface-secondary);
-	color: var(--color-primary);
-	border-color: var(--color-border-default);
+	background-color: var(--color-btn-secondary-bg);
+	color: var(--color-btn-secondary-text);
+	border-color: var(--color-btn-secondary-border);
 }
 
 .btn-secondary:hover {
-	background: var(--color-primary-light);
-	color: white;
-	border-color: var(--color-primary-light);
+	background-color: var(--color-btn-secondary-hover-bg);
+	color: var(--color-btn-secondary-hover-text);
+	border-color: var(--color-btn-secondary-hover-border);
 }
 
+.btn-secondary:active {
+	background-color: var(--color-btn-secondary-active-bg);
+}
+
+.btn-secondary:focus,
+.btn-secondary:focus-visible {
+	outline: 2px solid var(--color-btn-secondary-focus-ring);
+	outline-offset: 2px;
+}
+
+/* Outline Button - Low emphasis, tertiary actions */
 .btn-outline {
-	background: transparent;
-	color: var(--color-primary);
-	border-color: var(--color-primary);
+	background-color: var(--color-btn-outline-bg);
+	color: var(--color-btn-outline-text);
+	border-color: var(--color-btn-outline-border);
 }
 
 .btn-outline:hover {
-	background: var(--color-primary);
-	color: white;
+	background-color: var(--color-btn-outline-hover-bg);
+	color: var(--color-btn-outline-hover-text);
+	border-color: var(--color-btn-outline-hover-border);
 }
 
+.btn-outline:active {
+	background-color: var(--color-btn-outline-active-bg);
+}
+
+.btn-outline:focus,
+.btn-outline:focus-visible {
+	outline: 2px solid var(--color-btn-outline-focus-ring);
+	outline-offset: 2px;
+}
+
+/* Large Button - For prominent call-to-action elements */
 .btn-large {
 	padding: var(--space-xs) var(--space-m);
 	font-size: var(--step-0);
 }
 
+/* Active/Selected State */
 .btn.active {
-	background: var(--color-primary);
-	color: white;
+	background-color: var(--color-btn-primary-bg);
+	color: var(--color-btn-primary-text);
+	border-color: var(--color-btn-primary-border);
 }
 
 /* Posters Gallery */

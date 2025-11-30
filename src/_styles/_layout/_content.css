@@ -135,6 +135,10 @@
 	border-bottom: 2px solid var(--color-primary-light);
 }
 
+[data-theme="dark"] .content-main h2 {
+	color: var(--color-primary-light);
+}
+
 .content-main
 	:is(
 		* + h2,
@@ -177,6 +181,10 @@
 	margin: 0 0 var(--space-s) 0;
 	padding-bottom: var(--space-2xs);
 	border-bottom: 2px solid var(--color-primary-light);
+}
+
+[data-theme="dark"] .sidebar-card h3 {
+	color: var(--color-primary-light);
 }
 
 .quick-links {
