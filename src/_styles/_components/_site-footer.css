@@ -80,13 +80,13 @@ margin-right: 20px;    /* Space between items */
 	/* border-top: 1px solid rgba(255, 255, 255, 0.2); */
 	padding-top: var(--space-m);
 	text-align: match-parent;
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-bottom p {
 	margin: 0;
 	margin-bottom: var(--space-3xs);
 	font-size: 0.85rem;
-	color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-bottom a {

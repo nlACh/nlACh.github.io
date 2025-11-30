@@ -23,13 +23,11 @@
             <p class="pub-authors">{{ item.data.authors }}</p>
             <p class="pub-venue">
               <strong>{{ item.data.jorunal }}
-              {% if item.data.pub_year %} ({{ item.data.pub_year }}){% endif %}</strong>
+              {% if item.data.pub_year %} ({{ item.data.pub_year }}){% endif %}</strong><br/>
+              {% if item.data.doi %}
+                <strong>DOI: {{ item.data.doi }}</strong>  
+              {% endif %}
             </p>
-            {% if item.data.doi %}
-            <p class="pub-venue">
-              <strong>DOI: {{ item.data.doi }}</strong>  
-            </p>
-            {% endif %}
             <div class="pub-actions">
               {% if item.data.doi %}
                 <a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
@@ -37,7 +35,7 @@
                 </a>
               {% endif %}
               {% if item.data.abstract %}
-                <button class="btn btn-secondary abstract-toggle" data-target="abstract-j{{ loop.index }}">
+                <button class="btn btn-primary abstract-toggle" data-target="abstract-j{{ loop.index }}">
                   <span class="toggle-text">Show Abstract</span>
                 </button>
               {% endif %}
@@ -67,10 +65,12 @@
           <div class="pub-content-side">
             <h3 class="pub-title">{{ item.data.title }}</h3>
             <p class="pub-authors">{{ item.data.authors }}</p>
-            <p class="pub-venue"><strong>{{ item.data.event }}</strong></p>
-            {% if item.data.doi %}
-            <p class="pub-venue"><strong>DOI: {{ item.data.doi }}</strong></p>
-            {% endif %}
+            <p class="pub-venue">
+              <strong>{{ item.data.event }}</strong><br/>
+              {% if item.data.doi %}
+              <strong>DOI: {{ item.data.doi }}</strong>
+              {% endif %}
+            </p>  
             <div class="pub-actions">
               {% if item.data.proceedings %}
                 <a href="{{ item.data.proceedings }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
@@ -79,11 +79,11 @@
               {% endif %}
               {% if item.data.presentation_file %}
                 <!--
-                <a href="/content/pub_type/2-confs/{{ item.data.presentation_file }}" download class="btn btn-secondary">
+                <a href="/content/pub_type/2-confs/{{ item.data.presentation_file }}" download class="btn btn-primary">
                   Slides
                 </a>
                 -->
-                <button class="btn btn-outline pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.presentation_file }}">
+                <button class="btn btn-primary pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.presentation_file }}">
                   View Presentation
                 </button>
               {% endif %}
@@ -93,17 +93,17 @@
                   <span>Abstract</span>
                 </a>
                 -->
-                <button class="btn btn-outline pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.abstract_file }}">
+                <button class="btn btn-primary pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.abstract_file }}">
                   View Abstract
                 </button>
               {% endif %}
               {% if item.data.poster_file %}
-                <button class="btn btn-outline pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.poster_file }}">
+                <button class="btn btn-primary pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.poster_file }}">
                   View Poster
                 </button>
               {% endif %}
               {% if item.data.abstract %}
-                <button class="btn btn-secondary abstract-toggle" data-target="abstract-c{{ loop.index }}">
+                <button class="btn btn-primary abstract-toggle" data-target="abstract-c{{ loop.index }}">
                   <span class="toggle-text">Show Abstract</span>
                 </button>
               {% endif %}
@@ -141,20 +141,20 @@
                 </a>
               {% endif %}
               {% if item.data.alt_available == "Yes" and item.data.alt_addr %}
-                <a href="{{ item.data.alt_addr }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <a href="{{ item.data.alt_addr }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                   <span>Alternative Link</span>
                 </a>
               {% endif %}
               {% if item.data.abstract %}
-                <button class="btn btn-secondary abstract-toggle" data-target="abstract-p{{ loop.index }}">
+                <button class="btn btn-primary abstract-toggle" data-target="abstract-p{{ loop.index }}">
                   <span class="toggle-text">Show Abstract</span>
                 </button>
               {% endif %}
             </div>
             {% if item.data.abstract %}
-            <div class="pub-abstract abstract-collapsible" id="abstract-p{{ loop.index }}">
-              <p>{{ item.data.abstract }}</p>
-            </div>
+              <div class="pub-abstract abstract-collapsible" id="abstract-p{{ loop.index }}">
+                <p>{{ item.data.abstract }}</p>
+              </div>
             {% endif %}
           </div>
         </article>
