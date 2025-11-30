@@ -4,7 +4,13 @@
 <header class="site-header">
 	<nav class="main-nav" role="navigation" aria-label="Main navigation">
 		<div class="nav-container wrapper">
-			<a href="/" class="nav-brand">{{ config.projectName }}</a>
+			<!-- a href="/" class="nav-brand">{{ config.projectName }}</a> -->
+			<ul class="nav-menu">
+				<li><a href="/" {% if page.url == "/" %}class="nav-active" aria-current="page"{% endif %}>Home</a></li>
+				<li><a href="/research/" {% if "/research" in page.url %}class="nav-active" aria-current="page"{% endif %}>Research</a></li>
+				<li><a href="/cv/" {% if "/cv" in page.url %}class="nav-active" aria-current="page"{% endif %}>CV</a></li>
+				<li><a href="/posts/" {% if "/posts" in page.url %}class="nav-active" aria-current="page"{% endif %}>Blog</a></li>
+			</ul>
 			<div class="nav-right">
 				<button class="theme-toggle-button" aria-label="Toggle dark/light mode" onclick="toggleTheme()">
 					<span class="theme-icon-light">☀️</span>
@@ -14,12 +20,6 @@
 					<span class="nav-toggle-icon"></span>
 				</button>
 			</div>
-			<ul class="nav-menu">
-				<li><a href="/" {% if page.url == "/" %}class="nav-active" aria-current="page"{% endif %}>Home</a></li>
-				<li><a href="/research/" {% if "/research" in page.url %}class="nav-active" aria-current="page"{% endif %}>Research</a></li>
-				<li><a href="/cv/" {% if "/cv" in page.url %}class="nav-active" aria-current="page"{% endif %}>CV</a></li>
-				<li><a href="/posts/" {% if "/posts" in page.url %}class="nav-active" aria-current="page"{% endif %}>Blog</a></li>
-			</ul>
 		</div>
 	</nav>
 </header>
