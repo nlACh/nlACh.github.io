@@ -4,12 +4,12 @@
 <section class="page-section wrapper">
   <header class="page-header-section">
     <h1>{{ title }}</h1>
-    <p class="page-intro">{{ content | safe }}</p>
+    <h3 class="page-intro">{{ content | safe }}</h3>
   </header>
 
   {# Journal Publications #}
   <section class="publications-section" id="journals">
-    <h2><span class="section-icon">📄</span> Journal Publications</h2>
+    <h2> Journal Publications</h2>
     <div class="publications-grid">
       {% for item in collections.publication_id %}
         <article class="publication-card publication-card-horizontal">
@@ -50,7 +50,7 @@
 
   {# Conference Papers #}
   <section class="publications-section" id="conferences">
-    <h2><span class="section-icon">🎤</span> Conference Papers</h2>
+    <h2>Conference Papers</h2>
     <div class="publications-grid">
       {% for item in collections.conf_id %}
         <article class="publication-card publication-card-horizontal">
@@ -103,7 +103,7 @@
 
   {# Preprints #}
   <section class="publications-section" id="preprints">
-    <h2><span class="section-icon">📝</span> Preprints</h2>
+    <h2>Preprints</h2>
     <div class="publications-grid">
       {% for item in collections.preprint_id %}
         <article class="publication-card publication-card-horizontal">
@@ -143,7 +143,7 @@
       {% endfor %}
     </div>
   </section>
-
+  <!--
   {# Posters & Presentations - Merged from posters page #}
   <section class="publications-section" id="posters">
     <h2><span class="section-icon">📌</span> Posters &amp; Presentations</h2>
@@ -175,6 +175,7 @@
       </article>
     </div>
   </section>
+  -->
 </section>
 
 {# PDF Modal #}

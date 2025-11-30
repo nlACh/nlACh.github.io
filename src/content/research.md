@@ -5,4 +5,4 @@ description: "Research publications including journal papers, conference papers,
 permalink: "/research/index.html"
 ---
 
-My research focuses on quantum transport in nanoscale electronic devices, with expertise in Non-Equilibrium Green's Function (NEGF) techniques. Below are my publications organized by type.
+Below are the list of publications, organized by their types. Each section is further arranged in a chronological order.

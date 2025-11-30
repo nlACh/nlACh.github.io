@@ -13,7 +13,9 @@
       <div class="hero-text">
         <h1>{{ config.author.name }}</h1>
         <p class="hero-title">Senior Research Fellow</p>
-        <p class="hero-affiliation">QMat&DigiMF Research Group, Department of Electronic Science, University of Calcutta</p>
+        <p class="hero-affiliation">QMat&DigiMF Research Group</p>
+        <p class="hero-affiliation">Department of Electronic Science, University of Calcutta</p>
+        <p class="hero-affiliation">92, A. P. C. Road, Kolkata-700009.</p>
       </div>
       <div class="social-icons">
           <a href="{{ config.social.googleScholar }}" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Google Scholar">
@@ -41,10 +43,10 @@
   <section class="wrapper main-content">
     <div class="content-grid">
       <article class="content-main flow">
-        <h2>About Me</h2>
+        <h2>About Me:</h2>
         {{ content | safe }}
       </article>
-      
+      <!--
       <aside class="content-sidebar">
         <div class="sidebar-card">
           <h3>Research Profiles</h3>
@@ -63,6 +65,7 @@
           </ul>
         </div>
       </aside>
+      -->
     </div>
   </section>
 {% endblock %}

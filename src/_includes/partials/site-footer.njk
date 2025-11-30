@@ -1,15 +1,6 @@
 <footer class="site-footer" role="contentinfo">
   <div class="wrapper footer-content">
     <div class="footer-main">
-      <div class="footer-contact">
-        <h3>Contact</h3>
-        <p><strong>{{ config.author.name }}</strong></p>
-        <p>Senior Research Fellow</p>
-        <p>QMat&DigiMF Research Group</p>
-        <p>Department of Electronic Science</p>
-        <p>University of Calcutta, India</p>
-        <p><a href="mailto:{{ config.author.email }}">{{ config.author.email }}</a></p>
-      </div>
       <div class="footer-site">
         <h3>Site Map</h3>
         <ul>
@@ -21,8 +12,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ helpers.dateNow | dateToYear }} {{ config.author.name }}. All rights reserved.</p>
-      <p>Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a></p>
+      <p>&copy; {{ helpers.dateNow | dateToYear }} {{ config.author.name }}. Site built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a></p>
+      <p>Last update on {{ helpers.dateNow | dateToDMY }} at {{ helpers.dateNow | dateToTime }}</p>
     </div>
   </div>
 </footer>

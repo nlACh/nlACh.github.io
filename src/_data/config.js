@@ -9,7 +9,7 @@ export default {
 	backgroundColor: "#dadadaff",
 	author: {
 		name: "Nilayan Paul",
-		email: "nlpl931@gmail.com",
+		email: "",
 	},
 	keywords: "quantum transport, nanoscale devices, NEGF, Non-Equilibrium Green's Function, quantum computing, semiconductor physics, quantum dots, nanowire FETs, finFETs, electron beam lithography, voltage-tunable quantum dots, charge qubit, resonant tunneling",
 	identity: [
@@ -23,7 +23,7 @@ export default {
 		locale: "en_US",
 		image: {
 			rel: "/media/chobi.png",
-			alt: "Nilayan Paul - Researcher in Quantum Transport and Nanoscale Devices"
+			alt: "Nilayan Paul"
 		}
 	},
 	social: {
