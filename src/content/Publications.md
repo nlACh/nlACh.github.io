@@ -5,4 +5,4 @@ description: "Research publications including journal papers, conference papers,
 permalink: "/research/index.html"
 ---
 
-Below are the list of publications, organized by their types. Each section is further arranged in a chronological order.
+Below are the list of publications, organized by their types. Each section is further arranged in a chronological order (newest first).

@@ -3,7 +3,7 @@
 title: "Understanding the nanowire material dependent charge qubit performance of voltage-tunable double quantum dot gate nanowire channel field effect transistors (DQD-NWFETs)"
 image: "qubit_JEM.png"
 authors: "N. Paul, S. Chattopadhyay"
-jorunal: "Journal of Electronic Materials"
+jorunal: "Journal of Electronic Materials, 54, pp. 9511 - 9523"
 pub_year: "2025"
 doi: "https://doi.org/10.1007/s11664-025-12059-3"
 

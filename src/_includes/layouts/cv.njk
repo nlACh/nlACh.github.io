@@ -5,8 +5,8 @@
   <header class="page-header-section cv-header">
     <h1>{{ title }}</h1>
     <div class="cv-download">
-      <a href="/media/NPaul_CV.pdf" download="Nilayan_Paul_CV.pdf" class="btn btn-primary btn-large">
-        <span>Download CV (PDF)</span>
+      <a href="/media/NPaul_CV.pdf" download="Nilayan_Paul_CV.pdf" class="btn btn-primary">
+        <span>PDF Version</span>
       </a>
     </div>
   </header>
@@ -14,41 +14,29 @@
   <article class="cv-content">
     {# Personal Information #}
     <section class="cv-section">
-      <h2>Personal Information</h2>
-      <div class="cv-info-grid">
-        <div class="cv-info-item">
-          <strong>Name:</strong> {{ config.author.name }}
-        </div>
-        <div class="cv-info-item">
-          <strong>Website:</strong> <a href="{{ config.domain }}" target="_blank" rel="noopener noreferrer">{{ config.domain }}</a>
-        </div>
-      </div>
-    </section>
-
-    {# Current Position #}
-    <section class="cv-section">
-      <h2>Current Position</h2>
-      <div class="cv-entry">
-        <h3>Senior Research Fellow</h3>
-        <p class="cv-institution">Quantum Scale Materials and Digital Microfluidics Research Group (QMat&DigiMF)</p>
-        <p class="cv-details">Department of Electronic Science, University of Calcutta, India</p>
-        <p class="cv-details">Supervisor: Professor Sanatan Chattopadhyay</p>
+      <h2>Information:</h2>
+      <div class="cv-entry cv-info-item">
+      <strong><h3> {{ config.author.name }}</h3></strong>
+      <strong>Senior Research Fellow</strong>
+      <p class="cv-details">Department of Electronic Science, University of Calcutta, India <br/>
+      92 A. P. C. Road, Kolkata 700009</p>
+      <p class="cv-details"><strong>Supervisor:</strong> Prof. Sanatan Chattopadhyay</p>
       </div>
     </section>
 
     {# Research Interests #}
     <section class="cv-section">
-      <h2>Research Interests</h2>
+      <h2>Research Interests:</h2>
+      <div class="cv-entry cv-info-item">
       <ul class="cv-list">
-        <li>Quantum transport in nanoscale electronic devices</li>
+        <li>Quantum transport</li>
         <li>Non-Equilibrium Green's Function (NEGF) techniques</li>
-        <li>Voltage-tunable quantum dots (VTQDs) for quantum computing</li>
-        <li>Modeling of nanoscale field effect transistors (finFETs, nanowire FETs)</li>
-        <li>Charge qubit design and optimization</li>
+        <li>Nanoscale device modeling</li>
+        <li>Devices for quantum information processing</li>
+        <li>Beyond Moore devices</li>
         <li>Semiconductor device fabrication</li>
-        <li>Electron beam lithography</li>
-        <li>Resonant tunneling devices</li>
       </ul>
+      </div>
     </section>
 
     {# Skills & Expertise #}
@@ -58,26 +46,16 @@
         <div class="cv-skill-category">
           <h3>Theoretical & Computational</h3>
           <ul class="cv-list">
-            <li>Non-Equilibrium Green's Function (NEGF) formalism</li>
-            <li>Schrödinger-Poisson self-consistent framework</li>
-            <li>Quantum transport modeling</li>
-            <li>Device simulation and modeling</li>
+            <li>Nanoscale device modeling with NEGF</li>
+            <li></li>
           </ul>
         </div>
         <div class="cv-skill-category">
           <h3>Experimental</h3>
           <ul class="cv-list">
-            <li>Semiconductor device fabrication</li>
+            <li>Thin film fabrication by VLS</li>
             <li>Electron beam lithography</li>
-          </ul>
-        </div>
-        <div class="cv-skill-category">
-          <h3>Research Areas</h3>
-          <ul class="cv-list">
-            <li>Quantum dots and quantum computing</li>
-            <li>Nanowire FETs and finFETs</li>
-            <li>Resonant tunneling transport</li>
-            <li>Beyond Moore devices</li>
+            <li>Device characterization (electrical + physical)</li>
           </ul>
         </div>
       </div>
@@ -86,16 +64,18 @@
     {# Fellowships & Awards #}
     <section class="cv-section">
       <h2>Fellowships & Awards</h2>
-      <div class="cv-entry">
-        <h3>UGC Research Fellowship</h3>
-        <p class="cv-details">University Grants Commission, India</p>
-        <p class="cv-description">Fellowship supporting doctoral research in quantum transport and nanoscale devices.</p>
+      <div class="cv-entry cv-info-item">
+        <ul class="cv-list">
+        <li> <strong> Best paper presentation award: ICLED 2024 </strong> </li>
+        <li><strong>JRF</strong>
+          <p class="cv-details">University Grants Commission, India</p>
+        </li>
       </div>
     </section>
 
     {# Publications Summary #}
     <section class="cv-section">
-      <h2>Publications</h2>
+      <h2>List of Publications (recent):</h2>
       <div class="cv-pub-summary">
         <div class="cv-pub-count">
           <span class="count">{{ collections.publication_id | length }}</span>
@@ -113,28 +93,30 @@
       <p class="cv-pub-link"><a href="/research/">View full publication details with abstracts →</a></p>
 
       {# Journal Publications - Concise Numbered List #}
-      <h3>Journal Publications</h3>
+      <h3>Publications in peer reviewed journals</h3>
       <ol class="cv-publications-numbered">
         {% for item in collections.publication_id %}
         <li class="cv-pub-entry-concise">
           <span class="cv-pub-title-concise">{{ item.data.title }}</span>
-          <span class="cv-pub-meta">{{ item.data.authors }} • <em>{{ item.data.jorunal }}</em>{% if item.data.pub_year %}, {{ item.data.pub_year }}{% endif %}</span>
+          <span class="cv-pub-meta">{{ item.data.authors }} <br/> <em>{{ item.data.jorunal }}</em>{% if item.data.pub_year %}, {{ item.data.pub_year }}{% endif %}</span>
           {% if item.data.doi %}
-          <span class="cv-pub-doi-concise"><a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">DOI</a></span>
+          <span class="cv-pub-doi-concise">DOI: {{ item.data.doi }}</span>
+          <span class="cv-pub-doi-concise"><a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">Link to Version of Record</a></span>
           {% endif %}
         </li>
         {% endfor %}
       </ol>
 
       {# Conference Papers - Concise Numbered List #}
-      <h3>Conference Papers</h3>
+      <h3>Peer reviewed conference papers</h3>
       <ol class="cv-publications-numbered">
         {% for item in collections.conf_id %}
         <li class="cv-pub-entry-concise">
           <span class="cv-pub-title-concise">{{ item.data.title }}</span>
-          <span class="cv-pub-meta">{{ item.data.authors }} • {{ item.data.event }}</span>
-          {% if item.data.proceedings %}
-          <span class="cv-pub-doi-concise"><a href="{{ item.data.proceedings }}" target="_blank" rel="noopener noreferrer">Link</a></span>
+          <span class="cv-pub-meta">{{ item.data.authors }} <br/> {{ item.data.event }}</span>
+          {% if item.data.doi %}
+          <span class="cv-pub-doi-concise">DOI: {{ item.data.doi }}</span>
+          <span class="cv-pub-doi-concise"><a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">Link to proceedings</a></span>
           {% endif %}
         </li>
         {% endfor %}
@@ -154,11 +136,18 @@
         {% endfor %}
       </ol>
     </section>
-
+    {# Teaching Activities #}
+    <section class="cv-section">
+      <h2>Teaching:</h2>
+      <div class="cv-info-item">
+      <h3>TA for ESP-101 lab.</h3>
+      I teach basic semiconductor device characterization
+      </div>
+    </section>
     {# Research Profiles #}
     <section class="cv-section">
-      <h2>Research Profiles</h2>
-      <ul class="cv-list cv-profiles">
+      <h2>Research Profiles:</h2>
+      <ul class="cv-list cv-info-item">
         <li><a href="{{ config.social.googleScholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
         <li><a href="{{ config.social.researchGate }}" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
       </ul>
