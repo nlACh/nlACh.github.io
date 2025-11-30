@@ -151,6 +151,18 @@
 	--color-btn-outline-active-bg: #0f2444;
 	--color-btn-outline-focus-ring: #60A5FA;
 
+	/* =======================================================================
+	 * Z-INDEX SCALE
+	 * =======================================================================
+	 * Consistent z-index values for layering elements.
+	 * Use these variables to maintain predictable stacking order.
+	 */
+	--z-index-dropdown: 100;
+	--z-index-sticky: 200;
+	--z-index-header: 500;
+	--z-index-modal: 1000;
+	--z-index-modal-close: 1001;
+
 	/* Font - Times New Roman for professional academic appearance */
 	--font-family-sans: 'Times New Roman', Georgia, 'Times', serif;
 	--font-family-code: 'Consolas', 'Courier New', 'Monaco', monospace;
@@ -342,7 +354,11 @@
 		--color-primary-light: #60A5FA;
 		--color-accent: #60A5FA;
 		
-		/* Button Colors - Dark Mode (System Preference) */
+		/* Button Colors - Dark Mode (System Preference Fallback)
+		 * These duplicate the dark mode button colors and are required
+		 * when no explicit theme is set via data-theme attribute but
+		 * the user's system prefers dark mode.
+		 */
 		--color-btn-primary-bg: #60A5FA;
 		--color-btn-primary-text: #1A1A1A;
 		--color-btn-primary-border: #60A5FA;
