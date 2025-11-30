@@ -9,7 +9,7 @@
 
   {# Journal Publications #}
   <section class="publications-section" id="journals">
-    <h2 class="page-header-section"> Journal Publications</h2>
+    <h2> Journal Publications</h2>
     <div class="publications-grid">
       {% for item in collections.publication_id %}
         <article class="publication-card publication-card-horizontal">
@@ -37,16 +37,13 @@
                 </a>
               {% endif %}
               {% if item.data.abstract %}
-                <button class="btn btn-secondary abstract-toggle" data-target="abstract-j{{ loop.index }}">
-                  <span class="toggle-text">Show Abstract</span>
+                <button class="btn btn-secondary abstract-modal-btn" 
+                        data-title="{{ item.data.title }}" 
+                        data-abstract="{{ item.data.abstract | escape }}">
+                  <span>View Abstract</span>
                 </button>
               {% endif %}
             </div>
-            {% if item.data.abstract %}
-            <div class="pub-abstract abstract-collapsible" id="abstract-j{{ loop.index }}">
-              {{ item.data.abstract }}
-            </div>
-            {% endif %}
           </div>
         </article>
       {% endfor %}
@@ -78,23 +75,13 @@
                 </a>
               {% endif %}
               {% if item.data.presentation_file %}
-                <!--
-                <a href="/content/pub_type/2-confs/{{ item.data.presentation_file }}" download class="btn btn-secondary">
-                  Slides
-                </a>
-                -->
                 <button class="btn btn-outline pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.presentation_file }}">
                   View Presentation
                 </button>
               {% endif %}
               {% if item.data.abstract_file %}
-                <!--
-                <a href="/content/pub_type/2-confs/{{ item.data.abstract_file }}" download class="btn btn-outline">
-                  <span>Abstract</span>
-                </a>
-                -->
                 <button class="btn btn-outline pdf-view-btn" data-pdf="/content/pub_type/2-confs/{{ item.data.abstract_file }}">
-                  View Abstract
+                  View Abstract (PDF)
                 </button>
               {% endif %}
               {% if item.data.poster_file %}
@@ -103,16 +90,13 @@
                 </button>
               {% endif %}
               {% if item.data.abstract %}
-                <button class="btn btn-secondary abstract-toggle" data-target="abstract-c{{ loop.index }}">
-                  <span class="toggle-text">Show Abstract</span>
+                <button class="btn btn-secondary abstract-modal-btn" 
+                        data-title="{{ item.data.title }}" 
+                        data-abstract="{{ item.data.abstract | escape }}">
+                  <span>View Abstract</span>
                 </button>
               {% endif %}
             </div>
-            {% if item.data.abstract %}
-            <div class="pub-abstract abstract-collapsible" id="abstract-c{{ loop.index }}">
-              <p>{{ item.data.abstract }}</p>
-            </div>
-            {% endif %}
           </div>
         </article>
       {% endfor %}
@@ -146,16 +130,13 @@
                 </a>
               {% endif %}
               {% if item.data.abstract %}
-                <button class="btn btn-secondary abstract-toggle" data-target="abstract-p{{ loop.index }}">
-                  <span class="toggle-text">Show Abstract</span>
+                <button class="btn btn-secondary abstract-modal-btn" 
+                        data-title="{{ item.data.title }}" 
+                        data-abstract="{{ item.data.abstract | escape }}">
+                  <span>View Abstract</span>
                 </button>
               {% endif %}
             </div>
-            {% if item.data.abstract %}
-            <div class="pub-abstract abstract-collapsible" id="abstract-p{{ loop.index }}">
-              <p>{{ item.data.abstract }}</p>
-            </div>
-            {% endif %}
           </div>
         </article>
       {% endfor %}
@@ -205,46 +186,36 @@
   </div>
 </div>
 
+{# Abstract Modal Dialog #}
+<div class="abstract-modal" id="abstractModal" role="dialog" aria-modal="true" aria-labelledby="abstractModalTitle">
+  <div class="abstract-modal-backdrop"></div>
+  <div class="abstract-modal-content">
+    <div class="abstract-modal-header">
+      <h3 class="abstract-modal-title" id="abstractModalTitle">Abstract</h3>
+      <button class="abstract-modal-close" aria-label="Close abstract dialog">&times;</button>
+    </div>
+    <div class="abstract-modal-body">
+      <p id="abstractModalText">&nbsp;</p>
+    </div>
+  </div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Abstract toggle functionality with smooth animation
-  const abstractToggles = document.querySelectorAll('.abstract-toggle');
-  abstractToggles.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      const targetId = this.getAttribute('data-target');
-      const target = document.getElementById(targetId);
-      const toggleText = this.querySelector('.toggle-text');
-      
-      if (target) {
-        const isExpanded = target.classList.contains('abstract-expanded');
-        
-        if (isExpanded) {
-          target.classList.remove('abstract-expanded');
-          this.classList.remove('active');
-          if (toggleText) toggleText.textContent = 'Show Abstract';
-        } else {
-          target.classList.add('abstract-expanded');
-          this.classList.add('active');
-          if (toggleText) toggleText.textContent = 'Hide Abstract';
-        }
-      }
-    });
-  });
-
   // PDF Modal functionality
   const pdfModal = document.getElementById('pdfModal');
   const pdfViewer = document.getElementById('pdfViewer');
   const pdfViewBtns = document.querySelectorAll('.pdf-view-btn');
-  const modalBackdrop = document.querySelector('.pdf-modal-backdrop');
-  const modalClose = document.querySelector('.pdf-modal-close');
+  const pdfModalBackdrop = pdfModal.querySelector('.pdf-modal-backdrop');
+  const pdfModalClose = pdfModal.querySelector('.pdf-modal-close');
 
-  function openModal(pdfUrl) {
+  function openPdfModal(pdfUrl) {
     pdfViewer.src = pdfUrl;
     pdfModal.classList.add('pdf-modal-open');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeModal() {
+  function closePdfModal() {
     pdfModal.classList.remove('pdf-modal-open');
     pdfViewer.src = '';
     document.body.style.overflow = '';
@@ -254,23 +225,74 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('click', function() {
       const pdfUrl = this.getAttribute('data-pdf');
       if (pdfUrl) {
-        openModal(pdfUrl);
+        openPdfModal(pdfUrl);
       }
     });
   });
 
-  if (modalBackdrop) {
-    modalBackdrop.addEventListener('click', closeModal);
+  if (pdfModalBackdrop) {
+    pdfModalBackdrop.addEventListener('click', closePdfModal);
   }
 
-  if (modalClose) {
-    modalClose.addEventListener('click', closeModal);
+  if (pdfModalClose) {
+    pdfModalClose.addEventListener('click', closePdfModal);
   }
 
-  // Close modal on ESC key
+  // Abstract Modal functionality
+  const abstractModal = document.getElementById('abstractModal');
+  const abstractModalTitle = document.getElementById('abstractModalTitle');
+  const abstractModalText = document.getElementById('abstractModalText');
+  const abstractModalBtns = document.querySelectorAll('.abstract-modal-btn');
+  const abstractModalBackdrop = abstractModal.querySelector('.abstract-modal-backdrop');
+  const abstractModalClose = abstractModal.querySelector('.abstract-modal-close');
+
+  function openAbstractModal(title, abstractText) {
+    // Decode HTML entities
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = abstractText;
+    const decodedAbstract = textarea.value;
+    
+    abstractModalTitle.textContent = title;
+    abstractModalText.textContent = decodedAbstract;
+    abstractModal.classList.add('abstract-modal-open');
+    document.body.style.overflow = 'hidden';
+    
+    // Focus on close button for accessibility
+    abstractModalClose.focus();
+  }
+
+  function closeAbstractModal() {
+    abstractModal.classList.remove('abstract-modal-open');
+    document.body.style.overflow = '';
+  }
+
+  abstractModalBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const title = this.getAttribute('data-title');
+      const abstractText = this.getAttribute('data-abstract');
+      if (title && abstractText) {
+        openAbstractModal(title, abstractText);
+      }
+    });
+  });
+
+  if (abstractModalBackdrop) {
+    abstractModalBackdrop.addEventListener('click', closeAbstractModal);
+  }
+
+  if (abstractModalClose) {
+    abstractModalClose.addEventListener('click', closeAbstractModal);
+  }
+
+  // Close modals on ESC key
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && pdfModal.classList.contains('pdf-modal-open')) {
-      closeModal();
+    if (e.key === 'Escape') {
+      if (pdfModal.classList.contains('pdf-modal-open')) {
+        closePdfModal();
+      }
+      if (abstractModal.classList.contains('abstract-modal-open')) {
+        closeAbstractModal();
+      }
     }
   });
 });
