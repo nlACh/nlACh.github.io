@@ -4,12 +4,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://nlach.github.io/">
   <title>Nilayan Paul</title>
   <id>https://nlach.github.io/</id>
-  <updated>2025-11-30T05:35:01Z</updated>
+  <updated>2025-11-30T06:11:17Z</updated>
   <link rel="self" href="https://nlach.github.io/feed.xml" type="application/atom+xml"/>
   <link rel="alternate" type="text/html" href="https://nlach.github.io/"/>
   <author>
     <name>Nilayan Paul</name>
-    <email>nlpl931@gmail.com</email>
+    <email></email>
   </author>
   <icon>https://nlach.github.io/icon-512.jpg</icon>
 
@@ -20,8 +20,8 @@
       
       <id>https://nlach.github.io/content/pub_type/1-pubs/</id>
       <link rel="alternate" type="text/html" href="https://nlach.github.io/content/pub_type/1-pubs/"/>
-      <published>2025-11-30T05:35:01Z</published>
-      <updated>2025-11-30T05:35:01Z </updated>
+      <published>2025-11-30T06:11:17Z</published>
+      <updated>2025-11-30T06:11:17Z </updated>
       
         
           <category>mypubs</category>
@@ -36,8 +36,8 @@
       
       <id>https://nlach.github.io/content/pub_type/2-confs/</id>
       <link rel="alternate" type="text/html" href="https://nlach.github.io/content/pub_type/2-confs/"/>
-      <published>2025-11-30T05:35:01Z</published>
-      <updated>2025-11-30T05:35:01Z </updated>
+      <published>2025-11-30T06:11:17Z</published>
+      <updated>2025-11-30T06:11:17Z </updated>
       
         
           <category>mypubs</category>
@@ -52,8 +52,8 @@
       
       <id>https://nlach.github.io/content/pub_type/3-preprints/</id>
       <link rel="alternate" type="text/html" href="https://nlach.github.io/content/pub_type/3-preprints/"/>
-      <published>2025-11-30T05:35:01Z</published>
-      <updated>2025-11-30T05:35:01Z </updated>
+      <published>2025-11-30T06:11:17Z</published>
+      <updated>2025-11-30T06:11:17Z </updated>
       
         
           <category>mypubs</category>
