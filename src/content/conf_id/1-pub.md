@@ -11,4 +11,3 @@ proceedings: "https://www.researchgate.net/publication/370422763_Investigating_t
 presentation_file: "ISDCS2022_presentation.pdf"
 doi: "https://doi.org/10.1007/978-981-99-0055-8_20"
 ---
-Resonance
