@@ -2,5 +2,5 @@
 layout: "layouts/cv"
 title: "Curriculum Vitae"
 description: "Curriculum Vitae."
-permalink: "/cv.html"
+permalink: "/cv/index.html"
 ---
