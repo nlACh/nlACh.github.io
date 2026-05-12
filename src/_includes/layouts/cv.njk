@@ -76,6 +76,7 @@
     {# Publications Summary #}
     <section class="cv-section">
       <h2>List of Publications (recent):</h2>
+    <!--
       <div class="cv-pub-summary">
         <div class="cv-pub-count">
           <span class="count">{{ collections.publication_id | length }}</span>
@@ -90,8 +91,10 @@
           <span class="label">Preprints</span>
         </div>
       </div>
+    -->
+    <!--
       <p class="cv-pub-link"><a href="/research/">View full publication details with abstracts →</a></p>
-
+    -->
       {# Journal Publications - Concise Numbered List #}
       <h3 id="pub-list">Publications in peer reviewed journals</h3>
       <ol class="cv-publications-numbered">
@@ -100,8 +103,7 @@
           <span class="cv-pub-title-concise">{{ item.data.title }}</span>
           <span class="cv-pub-meta">{{ item.data.authors }} <br/> <em>{{ item.data.jorunal }}</em>{% if item.data.pub_year %}, {{ item.data.pub_year }}{% endif %}</span>
           {% if item.data.doi %}
-          <span class="cv-pub-doi-concise">DOI: {{ item.data.doi }}</span>
-          <span class="cv-pub-doi-concise"><a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">Link to Version of Record</a></span>
+          <span class="cv-pub-doi-concise">DOI: <a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">{{ item.data.doi }}</a></span>
           {% endif %}
         </li>
         {% endfor %}
@@ -115,8 +117,7 @@
           <span class="cv-pub-title-concise">{{ item.data.title }}</span>
           <span class="cv-pub-meta">{{ item.data.authors }} <br/> {{ item.data.event }}</span>
           {% if item.data.doi %}
-          <span class="cv-pub-doi-concise">DOI: {{ item.data.doi }}</span>
-          <span class="cv-pub-doi-concise"><a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">Link to proceedings</a></span>
+          <span class="cv-pub-doi-concise">DOI: <a href="{{ item.data.doi }}" target="_blank" rel="noopener noreferrer">{{ item.data.doi }}</a></span>
           {% endif %}
         </li>
         {% endfor %}

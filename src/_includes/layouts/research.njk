@@ -6,7 +6,7 @@
     <h1>{{ title }}</h1>
     <h3 class="page-intro">{{ content | safe }}</h3>
     <div class="page-intro">
-    <a href="/cv#pub-list">Click here for a concise list →</a>
+    Check <a href="{{ config.social.googleScholar }}">Google Scholar</a> for a complete list
     </div>
   </header>
 
@@ -28,7 +28,7 @@
               <strong>{{ item.data.jorunal }}
               {% if item.data.pub_year %} ({{ item.data.pub_year }}){% endif %}</strong><br/>
               {% if item.data.doi %}
-                <strong>DOI: {{ item.data.doi }}</strong>  
+                <strong>DOI: {{ item.data.doi }}</strong>
               {% endif %}
             </p>
             <div class="pub-actions">
@@ -73,7 +73,7 @@
               {% if item.data.doi %}
               <strong>DOI: {{ item.data.doi }}</strong>
               {% endif %}
-            </p>  
+            </p>
             <div class="pub-actions">
               {% if item.data.proceedings %}
                 <a href="{{ item.data.proceedings }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
@@ -184,10 +184,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const targetId = this.getAttribute('data-target');
       const target = document.getElementById(targetId);
       const toggleText = this.querySelector('.toggle-text');
-      
+
       if (target) {
         const isExpanded = target.classList.contains('abstract-expanded');
-        
+
         if (isExpanded) {
           target.classList.remove('abstract-expanded');
           this.classList.remove('active');
@@ -250,12 +250,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const textarea = document.createElement('textarea');
     textarea.innerHTML = abstractText;
     const decodedAbstract = textarea.value;
-    
+
     abstractModalTitle.textContent = title;
     abstractModalText.textContent = decodedAbstract;
     abstractModal.classList.add('abstract-modal-open');
     document.body.style.overflow = 'hidden';
-    
+
     // Focus on close button for accessibility
     abstractModalClose.focus();
   }
