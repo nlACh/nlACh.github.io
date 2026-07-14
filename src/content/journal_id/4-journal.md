@@ -2,6 +2,7 @@
 
 title: "Understanding the impact of geometrical design aspects on the performance of double quantum dot nanowire field-effect transistors (DQD-NWFETs) as a platform for possible charge qubit generation"
 
+image: "qubit_physscr.png"
 authors: "N. Paul, S. Chattopadhyay"
 jorunal: "Physica Scripta, 101, 275102"
 pub_year: "2026"
