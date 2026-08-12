@@ -33,7 +33,7 @@ Before buying anything, check if the instrument has some way of controlling it f
 
 VISA stands for Virtual Instrument Software Architecture. Think of it like a jack of all trades communication system for different communication protocols.
 
-![Schematic of VISA framework](/content/blogposts/VISA1.png)
+![Schematic of VISA framework](content/blogposts/VISA1.png)
  
 **There are two ways that I personally like:** 
 
