@@ -45,7 +45,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ "src/media_conf/*":"/content/pub_type/2-confs"});
 	eleventyConfig.addPassthroughCopy({ "src/media_preprint/*":"/content/pub_type/3-preprints"});
 	eleventyConfig.addPassthroughCopy({ "src/media_journal/*":"/content/pub_type/1-pubs"});
-
+  eleventyConfig.addPassthroughCopy({ "src/media_blog/*": "/content/blogposts" });
 	// Watch targets
 	eleventyConfig.addWatchTarget("./src/_styles/**/*.css");
 
