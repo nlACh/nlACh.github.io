@@ -5,23 +5,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Tags | Nilayan Paul</title>
+<title>How do you automate your measuring test equipment? | Nilayan Paul</title>
 <link rel="stylesheet" href="/site.css" media="all">
 <meta name="description" content="Nilayan Paul - University of Calcutta.">
 <meta name="author" content="Nilayan Paul">
 <meta name="keywords" content="quantum transport, nanoscale devices, NEGF, Non-Equilibrium Green&#39;s Function, quantum computing, semiconductor physics, quantum dots, nanowire FETs, finFETs, electron beam lithography, voltage-tunable quantum dots, charge qubit, resonant tunneling">
 <meta name="theme-color" content="#707070ff">
-<link rel="canonical" href="https://nlach.github.io/tag/feed/">
-<meta property="og:url" content="https://nlach.github.io/tag/feed/">
+<link rel="canonical" href="https://nlach.github.io/posts/2026-08-7-automation/">
+<meta property="og:url" content="https://nlach.github.io/posts/2026-08-7-automation/">
 <meta property="og:site_name" content="Nilayan Paul">
-<meta property="og:title" content="Tags | Nilayan Paul">
+<meta property="og:title" content="How do you automate your measuring test equipment? | Nilayan Paul">
 <meta property="og:description" content="Nilayan Paul - University of Calcutta.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://nlach.github.io/media/chobi.png">
 <meta property="og:image:alt" content="Nilayan Paul">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags | Nilayan Paul">
+<meta name="twitter:title" content="How do you automate your measuring test equipment? | Nilayan Paul">
 <meta name="twitter:description" content="Nilayan Paul - University of Calcutta.">
 <meta name="twitter:image" content="https://nlach.github.io/media/chobi.png">
 <meta name="generator" content="Eleventy v3.0.0">
@@ -71,7 +71,7 @@
 <li><a href="/">Home</a></li>
 <li><a href="/research/">Publications</a></li>
 <li><a href="/cv/">CV</a></li>
-<li><a href="/posts/">Blog</a></li>
+<li><a href="/posts/" class="nav-active" aria-current="page">Blog</a></li>
 </ul>
 <div class="nav-right">
 <button class="theme-toggle-button" aria-label="Toggle dark/light mode" onclick="toggleTheme()">
@@ -87,13 +87,40 @@
 </header>
 <script>function toggleTheme(){var t=document.documentElement,e="dark"===t.getAttribute("data-theme")?"light":"dark",a=document.querySelector(".theme-toggle-button");t.setAttribute("data-theme",e),a&&a.setAttribute("aria-label","dark"==e?"Switch to light mode":"Switch to dark mode");try{localStorage.setItem("theme",e)}catch(t){}}document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".theme-toggle-button"),e=document.documentElement.getAttribute("data-theme");t&&t.setAttribute("aria-label","dark"===e?"Switch to light mode":"Switch to dark mode");const a=document.querySelector(".nav-toggle"),o=document.querySelector(".nav-menu");a&&o&&a.addEventListener("click",function(){var t="true"===a.getAttribute("aria-expanded");a.setAttribute("aria-expanded",!t),o.classList.toggle("nav-menu-open")})})</script>
 <main id="main-content" role="main">
-<section class="wrapper layout-grid">
-<h1 class="page-header layout-span">Tagged “feed”</h1>
+<article class="wrapper layout-grid">
+<h1 class="page-header layout-span">How do you automate your measuring test equipment?</h1>
 <div class="layout-span | content-main flow">
+<h4>Tags:</h4>
+<a href="/tag/automation/">Automation</a>
+<a href="/tag/characterization/">Characterization</a>
+<p>In semiconductor research labs there is always a need to electrically characterize whatever device that has been fabricated. However, there may be several devices that need to be tested and the number of data points may well exceed what can be tackled manually. So, automation of some level is necessary. These days, most high-end setups already come with built-in automation. But what if you need some custom measurement or you have built a poor man's setup cobbling together different test equipment at the surplus store?</p>
+<p>There are a few ways to go about it...</p>
+<p>Before buying anything, check if the instrument has some way of controlling it from a computer. UART, RS-485, RS-232, IEEE-488 (GPIB), anything similar will do. All of these are essentially different protocols for communication, and in general there will be some sort of interfacing hardware that translates commands from your computer to the instrument.</p>
+<p>--&gt; For RS-232 and RS-485, there are cheap adapters available on the internet and their drivers are also easily available. Simply install them on the acquisition computer and everything's good to go.</p>
+<p>--&gt; Same is applicable to IEEE-488 GPIB adapters. Drivers are also easily available. A fun thing about GPIB is that you can daisy chain several instruments on a single bus if you have the connectors.</p>
+<p>--&gt; These days USB enabled instruments are also available. They usually appear as virtual COM ports when the drivers are installed.</p>
+<p><strong>Trouble comes along when there are some older instruments which use the above communication protocols but rely on custom chips or firmwares. Again, if their drivers are possible to install on newer computers, Bob's your uncle. Otherwise, better to avoid them (looking at you Princeton Instruments!).</strong></p>
+<p><strong>Now, to check if your computer can talk to your instrument</strong></p>
+<p>--&gt; Best thing you can do is download NI Max (from National Instruments) and their VISA related software (coming to it a bit later...). These are freely available.</p>
+<p>--&gt; If the computer can talk to your instrument correctly, it will appear on the NI Max software.</p>
+<p><strong>How to communicate simultaneously with multiple instruments at once?</strong></p>
 <ul>
+<li>Writing custom control code is always possible.</li>
+<li>The easier way is to use NI's <em>VISA</em> framework.</li>
+</ul>
+<p>VISA stands for Virtual Instrument Software Architecture. Think of it like a jack of all trades communication system for different communication protocols.</p>
+<figure><picture><source type="image/avif" srcset="/img/RWkxlyJrDA-300.avif 300w, /img/RWkxlyJrDA-600.avif 600w, /img/RWkxlyJrDA-1144.avif 1144w" sizes="(max-width: 72rem) 100vw, 75vw"><img decoding="async" loading="lazy" alt="Schematic of VISA framework" src="/img/RWkxlyJrDA-300.jpeg" width="1144" height="728" srcset="/img/RWkxlyJrDA-300.jpeg 300w, /img/RWkxlyJrDA-600.jpeg 600w, /img/RWkxlyJrDA-1144.jpeg 1144w" sizes="(max-width: 72rem) 100vw, 75vw"></picture></figure>
+<p><strong>There are two ways that I personally like:</strong></p>
+<ul>
+<li>
+<p>Use a proprietary solution such as LabVIEW (more high level approach) to communicate and acquire data.</p>
+</li>
+<li>
+<p>Use pyVISA to communicate with the instruments, and for data acquisition. This is a more intermediate level approach. You still send commands but don't need to talk in the language of each communication protocol.</p>
+</li>
 </ul>
 </div>
-</section>
+</article>
 </main>
 <footer class="site-footer" role="contentinfo">
 <div class="wrapper footer-content">
